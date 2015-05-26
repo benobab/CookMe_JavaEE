@@ -8,13 +8,13 @@
 </head>
 <body>
 <form action="emergency.jsp">
-<button type="submit">Let's Go</button><br>
+<button type="submit">Emergency</button><br>
 </form>
 <form action="recipes.jsp">
-<button type="submit">Let's Go</button><br>
+<button type="submit">Recipes</button><br>
 </form>
 <form action="shop.jsp">
-<button type="submit">Let's Go</button><br>
+<button type="submit">Shop</button><br>
 </form>
 </body>
 </html>
