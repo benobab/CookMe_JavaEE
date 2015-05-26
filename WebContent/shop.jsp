@@ -4,17 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Shop</title>
 </head>
 <body>
-<form action="emergency.jsp">
-<button type="submit">Let's Go</button><br>
-</form>
-<form action="recipes.jsp">
-<button type="submit">Let's Go</button><br>
-</form>
-<form action="shop.jsp">
-<button type="submit">Let's Go</button><br>
-</form>
+
 </body>
 </html>
