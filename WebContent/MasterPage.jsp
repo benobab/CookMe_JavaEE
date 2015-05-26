@@ -3,13 +3,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Insert title here</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Cook Me</title>
 	</head>
-<body>
-
-</body>
+	
+	<header>
+	
+	</header>
+	
+	<body>
+	
+	</body>
+	
 	<footer>
-		<jsp:include page="footer.jsp" />
+		<p>Copyright 2015 guiBra / tristandefournas / benobab [on Github] <img src="logo.png"/></p>		
 	</footer>
 </html>
