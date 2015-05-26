@@ -10,6 +10,6 @@
 
 </body>
 	<footer>
-		<%@include file="footer.jsp" %>
+		<jsp:include page="footer.jsp" />
 	</footer>
 </html>
