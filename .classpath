@@ -13,5 +13,11 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="/Users/benlacroix/JEE_Eclipse/CookMe_JEE/WebContent/WEB-INF/lib/jsf-api.jar"/>
+	<classpathentry kind="lib" path="/Users/benlacroix/JEE_Eclipse/CookMe_JEE/WebContent/WEB-INF/lib/jsf-impl.jar"/>
+	<classpathentry kind="lib" path="/Users/benlacroix/JEE_Eclipse/CookMe_JEE/WebContent/WEB-INF/lib/jstl-api-1.2.jar"/>
+	<classpathentry kind="lib" path="/Users/benlacroix/JEE_Eclipse/CookMe_JEE/WebContent/WEB-INF/lib/jstl-impl-1.2.jar"/>
+	<classpathentry kind="lib" path="/Users/benlacroix/JEE_Eclipse/CookMe_JEE/WebContent/WEB-INF/lib/mysql-connector-java-5.1.35-bin.jar"/>
+	<classpathentry kind="lib" path="/Users/benlacroix/JEE_Eclipse/CookMe_JEE/WebContent/WEB-INF/lib/primefaces-3.5.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
