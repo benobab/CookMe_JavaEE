@@ -1,5 +1,7 @@
 package model;
 
-public class UserModelBean {
+import java.io.Serializable;
+
+public class UserModelBean implements Serializable{
 //un utilisateur
 }
