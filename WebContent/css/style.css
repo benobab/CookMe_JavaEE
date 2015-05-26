@@ -1,1 +1,32 @@
 @CHARSET "ISO-8859-1";
+
+#logo{
+	float:right;
+}
+
+#register{
+	float:right;
+}
+
+#title{
+	width: 100px;
+	background-color: yellow;
+}
+
+#bouton{
+	float:left;
+}
+
+#form{
+	float:right;
+}
+
+#header{
+	height: 150px;
+	background-color:RED;
+}
+
+ #footer{
+ 	height:150px;
+	background-color: GREEN;
+}
