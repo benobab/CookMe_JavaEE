@@ -8,6 +8,5 @@
 </head>
 <body>
 <h1>Clique pour cuisiner.</h1>
-
 </body>
 </html>
