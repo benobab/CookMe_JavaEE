@@ -7,6 +7,6 @@
 <title>CookMe</title>
 </head>
 <body>
-<h1>Clique pour cuisiner.</h1>
+<h1>Clique pour cuisiner mec.</h1>
 </body>
 </html>
