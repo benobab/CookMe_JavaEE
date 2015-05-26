@@ -7,3 +7,5 @@ Concepts mis en oeuvre :
 + java bean
 + jsf 
 + jdbc
+
+L'architecture respectera les principes MVC.
