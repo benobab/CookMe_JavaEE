@@ -39,12 +39,11 @@
 			</td>
 			<td>
 				<h:inputText id="pwd" value = "#{UserSubmissionModel.pwd}" required="true">
-					<f:validator validatorId="validators.password" ></f:validator>
 				</h:inputText>
 			</td>
 			<td>
-				<h:inputText id="repwd" value = "#{UserSubmissionModel.pwd}" required="true">
-					<f:validator validatorId="validators.password" ></f:validator>
+				<h:inputText id="repwd" value = "#{UserSubmissionModel.repwd}" required="true">
+					<f:attribute name="TRUC" value="#{UserSubmissionModel}"/>
 				</h:inputText>
 			</td>
 			

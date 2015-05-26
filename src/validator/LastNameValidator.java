@@ -12,7 +12,7 @@ import javax.faces.validator.ValidatorException;
 
 @FacesValidator(value = "validators.lastname")
 public class LastNameValidator implements Validator {
-private static final String LASTNAME_PATTERN = "*" ; 
+private static final String LASTNAME_PATTERN = "(\\w+)" ; 
 private Pattern pattern;
 private Matcher matcher;
 
