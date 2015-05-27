@@ -22,11 +22,9 @@
 }
 
 #header{
-	height: 150px;
 	background-color:RED;
 }
 
  #footer{
- 	height:150px;
 	background-color: GREEN;
 }

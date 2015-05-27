@@ -1,38 +1,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html"
-		xmlns:ui="http://java.sun.com/jsf/facelets">
-	<h:head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<link rel="stylesheet" type="text/css" href="css/style.css" /> 
-		<title>Cook Me</title>
-	</h:head>
-	
-	<h:body>
-		<div id="header">
-			<ui:insert name="sectionTitle" id="title">Default Section Title</ui:insert>
-			<div id="register">
-				<div id="bouton">				
-					<button>+</button>
-					<p>Become membre</p>
-				</div>
-				<h:form id="form">
-					<h:outputText value="Username"></h:outputText>
-					<h:inputText id="username"></h:inputText>
-					<h:outputText value="Password"></h:outputText>
-					<h:inputSecret id="password"></h:inputSecret>
-					<h:commandButton value="OK" action="#{UserLoginBean.checkUser(UserLoginBean)}"/>
-				</h:form>		
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+	<title>Cook Me</title>
+</h:head>
+
+<h:body>
+	<div class="container-fluid">
+		<div id="header" class="row">
+			<div id="title" classe="col-md-6">
+				<ui:insert name="sectionTitle" id="title">Default Section Title</ui:insert>
+			</div>
+			<div id="becomeMember" class="col-md-2)">
+				<h:form id="formMember" class="form-horizontal">
+					<h:commandButton value="+" class="btn btn-default"
+						action="#{UserLoginBean.checkUser(UserLoginBean)}" />
+					<h:outputText class="col-sm-2 control-label" value="Become member"></h:outputText>
+				</h:form>
+			</div>
+			<div id="register" classe="col-md-4">
+				<h:form id="formRegister" class="form-horizontal">
+					<div class="form-group">
+						<h:outputText class="col-sm-2 control-label" value="Username"></h:outputText>
+						<h:inputText class="form-control" id="username"></h:inputText>
+					</div>
+					<div class="form-group">
+						<h:outputText class="col-sm-2 control-label" value="Password"></h:outputText>
+						<h:inputSecret class="form-control" id="password"></h:inputSecret>
+					</div>
+					<div class="form-group">
+						<h:commandButton value="OK" class="btn btn-default"
+							action="#{UserLoginBean.checkUser(UserLoginBean)}" />
+					</div>
+				</h:form>
 			</div>
 		</div>
-		
-		<div id="body">
+
+		<div id="body" class="row">
 			<ui:insert name="body">Default Section Content</ui:insert>
 		</div>
-		
-		<div id="footer">
-			<p>Copyright 2015 guiBra / tristandefournas / benobab [on Github] <img id="logo" src="logo.png"/></p>		
+
+		<div id="footer" class="row">
+			<div classe="col-md-8">
+				<p>Copyright 2015 guiBra / tristandefournas / benobab [on
+					Github]</p>
+			</div>
+			<div classe="col-md-4">
+				<img id="logo" src="logo.png" />
+			</div>
 		</div>
-	</h:body>
+	</div>
+</h:body>
 </html>
