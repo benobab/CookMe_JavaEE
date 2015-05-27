@@ -18,9 +18,8 @@
 				<ui:insert name="sectionTitle" id="title">Default Section Title</ui:insert>
 			</div>
 			<div id="becomeMember" class="col-md-2)">
-				<h:form id="formMember" class="form-horizontal">
-					<h:commandButton value="+" class="btn btn-default"
-						action="inscription.jsf" />
+				<h:form id="formMember" class="form-horizontal" action="inscription.jsf">
+					<h:commandButton value="+" type="submit" class="btn btn-default"/>
 					<h:outputText class="col-sm-2 control-label" value="Become member"></h:outputText>
 				</h:form>
 			</div>
@@ -28,14 +27,18 @@
 				<h:form id="formConnect" class="form-horizontal" rendered="true">
 					<div class="form-group">
 						<h:outputText class="col-sm-2 control-label" value="Username"></h:outputText>
-						<h:inputText class="form-control" id="username" value="#{UserModelBean.login}"></h:inputText>
+						<h:inputText class="form-control" id="username"
+							value="#{UserModelBean.login}"></h:inputText>
 					</div>
 					<div class="form-group">
 						<h:outputText class="col-sm-2 control-label" value="Password"></h:outputText>
+						<h:inputSecret class="form-control" id="password"
+							value="#{UserModelBean.pwd}"></h:inputSecret>
 					</div>
 					<div class="form-group">
 						<h:commandButton value="OK" class="btn btn-default"
-							<f:ajax execute="@form" render="@form"/>
+							action="#{UserControlerBean.checkConnection(UserModelBean)}">
+							<f:ajax execute="@form" render="@form" />
 						</h:commandButton>
 					</div>
 				</h:form>
@@ -43,8 +46,8 @@
 					<p>Welcome toi</p>
 					<p>12 personnes co</p>
 					<h:commandButton value="Logout" class="btn btn-default"
-							action="#{UserLoginBean.logout()}" >
-						</h:commandButton>
+						action="#{UserLoginBean.logout()}">
+					</h:commandButton>
 				</h:form>
 			</div>
 		</div>
