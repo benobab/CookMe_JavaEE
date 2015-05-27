@@ -8,49 +8,56 @@
 </h:head>
 <h:body>
     <h:form>
-        <h3>Connexion</h3>
+        <h3>Inscription</h3>
         <table border="0"> 
         <tr>
-			<td>Your Login</td>
+			<td>Your Fisrtname</td>
 			<td>
-				<h:inputText id="firstname" value = "#{UserSubmissionModel.firstname}" required="true">
+				<h:inputText id="firstname" value = "#{UserSubmissionModelBean.firstname}" required="true">
 					<f:validator validatorId="validators.firstname" ></f:validator>
 				</h:inputText>
 			</td>
+			<td>Your Lastname</td>
 			<td>
-				<h:inputText id="lastname" value = "#{UserSubmissionModel.lastname}" required="true">
+				<h:inputText id="lastname" value = "#{UserSubmissionModelBean.lastname}" required="true">
 					<f:validator validatorId="validators.lastname" ></f:validator>
 				</h:inputText>
 			</td>
+			<td>Your Age</td>
 			<td>
-				<h:inputText id="age" value = "#{UserSubmissionModel.age}" required="true">
+				<h:inputText id="age" value = "#{UserSubmissionModelBean.age}" required="true">
 					<f:validator validatorId="validators.age" ></f:validator>
 				</h:inputText>
 			</td>
+			<td>Your Mail</td>
 			<td>
-				<h:inputText id="email" value = "#{UserSubmissionModel.email}" required="true">
+				<h:inputText id="email" value = "#{UserSubmissionModelBean.email}" required="true">
 					<f:validator validatorId="validators.email" ></f:validator>
 				</h:inputText>
 			</td>
+			<td>Your Login</td>
 			<td>
-				<h:inputText id="login" value = "#{UserSubmissionModel.login}" required="true">
+				<h:inputText id="login" value = "#{UserSubmissionModelBean.login}" required="true">
 					<f:validator validatorId="validators.login" ></f:validator>
 				</h:inputText>
 			</td>
+			<td>Your Pwd</td>
 			<td>
-				<h:inputText id="pwd" value = "#{UserSubmissionModel.pwd}" required="true">
+				<h:inputText id="pwd" value="#{UserSubmissionModelBean.pwd}" required="true" binding="#{pass}">
 				</h:inputText>
 			</td>
+			<td>Re enter Your Pwd</td>
 			<td>
-				<h:inputText id="repwd" value = "#{UserSubmissionModel.repwd}" required="true">
-					<f:attribute name="TRUC" value="#{UserSubmissionModel}"/>
+				<h:inputText id="repwd" value = "#{UserSubmissionModelBean.repwd}" required="true">
+					<f:validator validatorId="validators.password"></f:validator>
+					 <f:attribute name="premPass" value="#{pass}"/>
 				</h:inputText>
 			</td>
 			
 		</tr> 
 	    <tr>
 			<td>
-				<h:commandButton value="OK" action="#{UserSubmissionModel.addUser(UserSubmissionModel)}"/>
+				<h:commandButton value="OK" action="#{UserSubmissionModelBean.addUser(UserSubmissionModel)}"/>
 			</td> 
 		</tr>
 		￼￼</table>

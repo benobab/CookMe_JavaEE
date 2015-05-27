@@ -5,6 +5,7 @@ import java.util.regex.Pattern;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.component.UIComponent;
+import javax.faces.component.UIInput;
 import javax.faces.context.FacesContext;
 import javax.faces.validator.FacesValidator;
 import javax.faces.validator.Validator;
@@ -23,11 +24,13 @@ public PasswordValidator() {
 }
 @Override
 public void validate (FacesContext context, UIComponent component, Object value) throws ValidatorException {
-	
-	UserSubmissionModel obj = (UserSubmissionModel) component.getAttributes().get("TRUC");
-	if(!(obj.getPwd().compareTo(obj.getRepwd())==0))
+		
+	String obj =   component.getAttributes().get("premPass").toString();
+	//System.out.println(obj.getSubmittedValue());
+	System.out.println(obj + value.toString());
+	if(obj.compareTo(value.toString())<0)
 	{	
-		FacesMessage msg = new FacesMessage("user name validation failed.","User Name Validation failed please follow the contraint"+PASSWORD_PATTERN); 
+		FacesMessage msg = new FacesMessage("Mdp différent du premier","Veuillez rentrer deux mots de passe identiques."+PASSWORD_PATTERN); 
 		msg.setSeverity(FacesMessage.SEVERITY_ERROR); 
 		throw new ValidatorException(msg);
 	}

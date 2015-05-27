@@ -23,7 +23,7 @@ public AgeValidator() {
 public void validate (FacesContext context, UIComponent component, Object value) throws ValidatorException {
 	matcher = pattern.matcher(value.toString()); 
 	if(!matcher.matches()){
-		FacesMessage msg = new FacesMessage("user name validation failed.","User Name Validation failed please follow the contraint"+AGE_PATTERN); 
+		FacesMessage msg = new FacesMessage("Ce n'est pas un entier compris entre 0 et 99","Rentrez un entier entre 0 et 100 : "+AGE_PATTERN); 
 		msg.setSeverity(FacesMessage.SEVERITY_ERROR); 
 		throw new ValidatorException(msg); 
 	}

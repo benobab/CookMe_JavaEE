@@ -23,7 +23,7 @@ public LastNameValidator() {
 public void validate (FacesContext context, UIComponent component, Object value) throws ValidatorException {
 	matcher = pattern.matcher(value.toString()); 
 	if(!matcher.matches()){
-		FacesMessage msg = new FacesMessage("user name validation failed.","User Name Validation failed please follow the contraint"+LASTNAME_PATTERN); 
+		FacesMessage msg = new FacesMessage("Lastname incorrect","Lastname pattern : "+LASTNAME_PATTERN); 
 		msg.setSeverity(FacesMessage.SEVERITY_ERROR); 
 		throw new ValidatorException(msg); 
 	}

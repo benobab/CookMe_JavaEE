@@ -22,6 +22,14 @@ public class UserSubmissionModel {
 		
 	}
 
+	public void addUser(UserSubmissionModel user)
+	{
+		//TODO : ajouter en BDD via la DAO
+		System.out.println("On ajoute un user en bdd");
+	}
+	
+	
+	
 
 	public String getFirstname() {
 		return firstname;

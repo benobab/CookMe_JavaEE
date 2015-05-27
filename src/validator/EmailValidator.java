@@ -10,7 +10,7 @@ import javax.faces.validator.FacesValidator;
 import javax.faces.validator.Validator;
 import javax.faces.validator.ValidatorException;
 
-@FacesValidator(value = "validators.mail")
+@FacesValidator(value = "validators.email")
 public class EmailValidator implements Validator {
 private static final String MAIL_PATTERN = "[a-zA-Z0-9-._]+@[a-zA-Z0-9-._].[a-z]+" ; 
 private Pattern pattern;
@@ -23,7 +23,7 @@ public EmailValidator() {
 public void validate (FacesContext context, UIComponent component, Object value) throws ValidatorException {
 	matcher = pattern.matcher(value.toString()); 
 	if(!matcher.matches()){
-		FacesMessage msg = new FacesMessage("user name validation failed.","User Name Validation failed please follow the contraint"+MAIL_PATTERN); 
+		FacesMessage msg = new FacesMessage("Ce n'est pas une @ mail","Il faut suivre le pattern suivant, mail correct : "+MAIL_PATTERN); 
 		msg.setSeverity(FacesMessage.SEVERITY_ERROR); 
 		throw new ValidatorException(msg); 
 	}
