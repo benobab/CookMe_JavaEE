@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:body>
+	<ui:composition template="./MasterPage.xhtml">
+
+		<ui:define name="body">
+			<div class="col-md-6">
+				<h3>Interface d'administration</h3>
+				<p>Connectez-vous</p>
+			</div>
+			<div class="col-md-6">
+				<h:form role="form" class="form-inline">
+					<div class="form-group">
+					<label for="email">Login</label>
+					<h:inputText id="username" value="#{UserModelBean.login}" required="true"/><br />
+					</div>
+					<div class="form-group">
+    				<label for="email">Password</label>
+					<h:inputSecret id="password" value="#{UserModelBean.pwd}" required="true"/>
+					</div>
+					<h:commandButton value="OK">
+					</h:commandButton>
+				</h:form>
+				<br /><br /><br /><br />
+			</div>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>
