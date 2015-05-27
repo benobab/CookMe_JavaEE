@@ -151,4 +151,37 @@ public class UserDao {
 		
 	}
 	
+	public boolean isAdmin(UserModel user)
+	{
+		String sql;
+		int isAdmin =0;//SELECT admin from user where (login like 'benobab2')
+		sql="select admin from user where ( login like '"+user.getLogin()+"')"; 
+		try {
+			java.sql.Statement query = connection.createStatement();
+			 ResultSet r = query.executeQuery(sql);
+			 while(r.next())
+			 {
+				 isAdmin= r.getInt("admin");
+				 if(isAdmin==1)
+				 {
+					 break;
+				 }
+			 }
+				 connection.close();
+			 
+			 
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		 if(isAdmin==1)
+		 {
+			 return true;
+		 }else
+		 {
+			 return false;
+		 }
+	}
+	
 }
