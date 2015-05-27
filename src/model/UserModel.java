@@ -16,11 +16,6 @@ public class UserModel implements Serializable{
 	private int age;
 	private String login;
 	private String pwd;
-	
-	public UserModel()
-	{
-		
-	}
 
 	public UserModel(String firstname, String lastname, int age, String email,
 			String login, String pwd) {
@@ -79,8 +74,7 @@ public class UserModel implements Serializable{
 
 	public void setPwd(String pwd) {
 		this.pwd = pwd;
-	}
-	
+	}	
 	
 	@Override
 	public String toString() { return
