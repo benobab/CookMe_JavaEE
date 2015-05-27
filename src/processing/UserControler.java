@@ -9,7 +9,7 @@ import model.UserModel;
 import fabric.DaoFabric;
 import instance.UserDao;
 
-@ManagedBean(name = "UserControlerBean")
+@ManagedBean(name = "userControlerBean")
 @ApplicationScoped
 public class UserControler {
 	//actions relatives aux utilisateurs

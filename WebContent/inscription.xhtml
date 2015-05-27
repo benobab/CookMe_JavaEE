@@ -17,7 +17,7 @@
 							value="Your Fisrtname"></h:outputText>
 						<div class="col-sm-4">
 							<h:inputText id="firstname" class="form-control"
-								value="#{UserModelBean.firstname}" required="true">
+								value="#{userModelBean.firstname}" required="true">
 								<f:validator validatorId="validators.firstname"></f:validator>
 							</h:inputText>
 						</div>
@@ -27,7 +27,7 @@
 								value="Your Lastname"></h:outputText>
 							<div class="col-sm-4">
 								<h:inputText id="lastname" class="form-control"
-									value="#{UserModelBean.lastname}" required="true">
+									value="#{userModelBean.lastname}" required="true">
 									<f:validator validatorId="validators.lastname"></f:validator>
 								</h:inputText>
 							</div>
@@ -37,7 +37,7 @@
 							<h:outputText class="col-sm-2 control-label" value="Your Age"></h:outputText>
 							<div class="col-sm-4">
 								<h:inputText id="age" class="form-control"
-									value="#{UserModelBean.age}" required="true">
+									value="#{userModelBean.age}" required="true">
 									<f:validator validatorId="validators.age"></f:validator>
 								</h:inputText>
 							</div>
@@ -46,7 +46,7 @@
 							<h:outputText class="col-sm-2 control-label" value="Your Mail"></h:outputText>
 							<div class="col-sm-4">
 								<h:inputText id="email" class="form-control"
-									value="#{UserModelBean.email}" required="true">
+									value="#{userModelBean.email}" required="true">
 									<f:validator validatorId="validators.email"></f:validator>
 								</h:inputText>
 							</div>
@@ -55,7 +55,7 @@
 							<h:outputText class="col-sm-2 control-label" value="Your Login"></h:outputText>
 							<div class="col-sm-4">
 								<h:inputText id="login" class="form-control"
-									value="#{UserModelBean.login}" required="true">
+									value="#{userModelBean.login}" required="true">
 									<f:validator validatorId="validators.login"></f:validator>
 								</h:inputText>
 							</div>
@@ -64,7 +64,7 @@
 							<h:outputText class="col-sm-2 control-label" value="Your Pwd"></h:outputText>
 							<div class="col-sm-4">
 								<h:inputText id="pwd" class="form-control"
-									value="#{UserModelBean.pwd}" required="true" binding="#{pass}">
+									value="#{userModelBean.pwd}" required="true" binding="#{pass}">
 								</h:inputText>
 							</div>
 						</div>
@@ -81,7 +81,7 @@
 						</div>
 						<div class="form-group">
 							<h:commandButton value="OK" class="btn btn-default"
-								action="#{UserControlerBean.addUser(UserModelBean)}" />
+								action="#{userControlerBean.addUser(userModelBean)}" />
 						</div>
 				</h:form>
 			</div>

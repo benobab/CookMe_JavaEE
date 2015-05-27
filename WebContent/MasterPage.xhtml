@@ -28,16 +28,16 @@
 					<div class="form-group">
 						<h:outputText class="col-sm-2 control-label" value="Username"></h:outputText>
 						<h:inputText class="form-control" id="username"
-							value="#{UserModelBean.login}"></h:inputText>
+							value="#{userModelBean.login}"></h:inputText>
 					</div>
 					<div class="form-group">
 						<h:outputText class="col-sm-2 control-label" value="Password"></h:outputText>
 						<h:inputSecret class="form-control" id="password"
-							value="#{UserModelBean.pwd}"></h:inputSecret>
+							value="#{userModelBean.pwd}"></h:inputSecret>
 					</div>
 					<div class="form-group">
 						<h:commandButton value="OK" class="btn btn-default"
-							action="#{UserControlerBean.checkConnection(UserModelBean)}">
+							action="#{userControlerBean.checkConnection(userModelBean)}">
 							<f:ajax execute="@form" render="@form" />
 						</h:commandButton>
 					</div>
@@ -46,7 +46,7 @@
 					<p>Welcome toi</p>
 					<p>12 personnes co</p>
 					<h:commandButton value="Logout" class="btn btn-default"
-						action="#{UserLoginBean.logout()}">
+						action="#{userModelBean.logout()}">
 					</h:commandButton>
 				</h:form>
 			</div>
