@@ -25,6 +25,12 @@ public class UserDao {
 		this.dB_NAME = db_NAME;
 		this.dB_PWD = db_PWD;
 		this.dB_USER = db_USER;
+		
+		try {
+			connection = java.sql.DriverManager.getConnection("jdbc:mysql://"+dB_HOST+":"+dB_PORT+"/"+dB_NAME, dB_USER, dB_PWD);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	
@@ -55,12 +61,13 @@ public class UserDao {
 		return userList;
 	}
 	
-	public void addUser(UserModel user)
+	public boolean addUser(UserModel user)
 	{
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			connection = java.sql.DriverManager.getConnection("jdbc:mysql://"+dB_HOST+":"+dB_PORT+"/"+dB_NAME, dB_USER, dB_PWD);
 			} catch (SQLException e) {
+				System.out.println("Erreur apres connection insert");
 			e.printStackTrace();
 			} catch (ClassNotFoundException e) {
 			                     e.printStackTrace();
@@ -69,10 +76,13 @@ public class UserDao {
 
 		try {
 			query = connection.createStatement();
-			query.execute("INSERT INTO USER VALUES ('"+user.getFirstname()+"','"+user.getLastname()+"','"+user.getAge()+"','"+user.getEmail()+"','"+user.getLogin()+"','"+user.getPwd()+"')");	
+			query.execute("INSERT INTO USER ( firstname, lastname,age,mail,login,pwd) VALUES ('"+user.getFirstname()+"','"+user.getLastname()+"','"+user.getAge()+"','"+user.getEmail()+"','"+user.getLogin()+"','"+user.getPwd()+"')");	
 			connection.close();
 		} catch (SQLException e) {
+			System.out.println("Erreur après insert");
 			e.printStackTrace();
+			return false;
 		}
+		return true;
 	}
 }

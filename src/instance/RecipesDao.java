@@ -26,6 +26,12 @@ public class RecipesDao {
 		this.dB_NAME = db_NAME;
 		this.dB_PWD = db_PWD;
 		this.dB_USER = db_USER;
+		
+		try {
+			connection = java.sql.DriverManager.getConnection("jdbc:mysql://"+dB_HOST+":"+dB_PORT+"/"+dB_NAME, dB_USER, dB_PWD);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 	
@@ -45,7 +51,7 @@ public class RecipesDao {
 
 		try {
 			query = connection.createStatement();
-			query.execute("INSERT INTO USER VALUES ('"+recipe.getPreparation().toString()+"','"+recipe.getDifficulte()+"','"+recipe.getPersonnes()+"','"+recipe.getType()+"','"+recipe.getResume()+"','"+recipe.getProcedure()+"','"+recipe.getTitre()+"','"+recipe.getImg()+"')");	
+			query.execute("INSERT INTO RECETTE ( preparation, difficulte ,personnes ,type,resume,procedure,titre,img) VALUES ('"+recipe.getPreparation().toString()+"','"+recipe.getDifficulte()+"','"+recipe.getPersonnes()+"','"+recipe.getType()+"','"+recipe.getResume()+"','"+recipe.getProcedure()+"','"+recipe.getTitre()+"','"+recipe.getImg()+"')");	
 			connection.close();
 		} catch (SQLException e) {
 			e.printStackTrace();

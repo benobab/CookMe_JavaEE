@@ -17,6 +17,10 @@ public class UserModel implements Serializable{
 	private String login;
 	private String pwd;
 
+	public UserModel()
+	{
+		
+	}
 	public UserModel(String firstname, String lastname, int age, String email,
 			String login, String pwd) {
 		

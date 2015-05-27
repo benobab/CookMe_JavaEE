@@ -15,37 +15,37 @@
 					<tr>
 						<td>Your Fisrtname</td>
 						<td><h:inputText id="firstname"
-								value="#{UserSubmissionModelBean.firstname}" required="true">
+								value="#{UserModelBean.firstname}" required="true">
 								<f:validator validatorId="validators.firstname"></f:validator>
 							</h:inputText></td>
 						<td>Your Lastname</td>
 						<td><h:inputText id="lastname"
-								value="#{UserSubmissionModelBean.lastname}" required="true">
+								value="#{UserModelBean.lastname}" required="true">
 								<f:validator validatorId="validators.lastname"></f:validator>
 							</h:inputText></td>
 						<td>Your Age</td>
 						<td><h:inputText id="age"
-								value="#{UserSubmissionModelBean.age}" required="true">
+								value="#{UserModelBean.age}" required="true">
 								<f:validator validatorId="validators.age"></f:validator>
 							</h:inputText></td>
 						<td>Your Mail</td>
 						<td><h:inputText id="email"
-								value="#{UserSubmissionModelBean.email}" required="true">
+								value="#{UserModelBean.email}" required="true">
 								<f:validator validatorId="validators.email"></f:validator>
 							</h:inputText></td>
 						<td>Your Login</td>
 						<td><h:inputText id="login"
-								value="#{UserSubmissionModelBean.login}" required="true">
+								value="#{UserModelBean.login}" required="true">
 								<f:validator validatorId="validators.login"></f:validator>
 							</h:inputText></td>
 						<td>Your Pwd</td>
 						<td><h:inputText id="pwd"
-								value="#{UserSubmissionModelBean.pwd}" required="true"
+								value="#{UserModelBean.pwd}" required="true"
 								binding="#{pass}">
 							</h:inputText></td>
 						<td>Re enter Your Pwd</td>
 						<td><h:inputText id="repwd"
-								value="#{UserSubmissionModelBean.repwd}" required="true">
+								value="#{repass}" required="true">
 								<f:validator validatorId="validators.password"></f:validator>
 								<f:attribute name="premPass" value="#{pass}" />
 							</h:inputText></td>
@@ -53,7 +53,7 @@
 					</tr>
 					<tr>
 						<td><h:commandButton value="OK"
-								action="#{UserSubmissionModelBean.addUser(UserSubmissionModel)}" />
+								action="#{UserControlerBean.addUser(UserModelBean)}" />
 						</td>
 					</tr>
 				</table>

@@ -11,7 +11,6 @@ import javax.faces.validator.FacesValidator;
 import javax.faces.validator.Validator;
 import javax.faces.validator.ValidatorException;
 
-import model.UserSubmissionModel;
 
 @FacesValidator(value = "validators.password")
 public class PasswordValidator implements Validator {

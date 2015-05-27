@@ -2,11 +2,17 @@ package processing;
 
 import java.util.ArrayList;
 
+import javax.faces.bean.ApplicationScoped;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+
 import model.UserModel;
 import fabric.DaoFabric;
 import instance.UserDao;
 
-public class UserControlerBean {
+@ManagedBean(name = "UserControlerBean")
+@ApplicationScoped
+public class UserControler {
 	//actions relatives aux utilisateurs
 	
 	public boolean checkUser(UserModel user){
@@ -24,7 +30,13 @@ public class UserControlerBean {
 			return false;
 		}
 		
-		System.out.println("Bonjour Monde");
-		return true;
 	}
+	
+	public boolean addUser(UserModel user){
+		DaoFabric daoFabric = DaoFabric.getInstance();		
+		UserDao userDao = daoFabric.createUserDao();
+		//On laisse la Dao gérer
+		return userDao.addUser(user);
+	}
+	
 }
