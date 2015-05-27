@@ -28,7 +28,7 @@ public class UserDao {
 	}
 	
 	
-	public ArrayList<UserModel> getData()
+	public ArrayList<UserModel> getUsers()
 	{
 		ArrayList<UserModel> userList = new ArrayList<UserModel>();
 		

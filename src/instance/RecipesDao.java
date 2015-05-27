@@ -1,7 +1,9 @@
 package instance;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import model.RecipeModel;
 import model.UserModel;
@@ -48,5 +50,36 @@ public class RecipesDao {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	
+	public ArrayList<RecipeModel> getRecipes()
+	{
+		ArrayList<RecipeModel> recipeList = new ArrayList<RecipeModel>();
+		
+		String sql;
+		sql="SELECT * FROM RECETTE";
+		try {
+			java.sql.Statement query = connection.createStatement();
+			 ResultSet r = query.executeQuery(sql);
+			 while(r.next())
+			 {
+				 RecipeModel recipe= new RecipeModel(null, 0,0, " ", " "," "," "," ");
+				 recipe.setTitre(r.getString("titre"));
+				 recipe.setImg(r.getString("img"));
+				 recipe.setDifficulte(r.getInt("difficulte"));
+				 recipe.setType(r.getString("type"));
+				 recipe.setPersonnes(r.getInt("personnes"));
+				 recipe.setPreparation(r.getTime("preparation"));
+				 recipe.setResume(r.getString("resume"));
+				 recipe.setProcedure(r.getString("procedure"));
+				 recipeList.add(recipe);
+			 }
+			connection.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return recipeList;
 	}
 }
