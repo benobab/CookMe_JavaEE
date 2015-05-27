@@ -45,5 +45,12 @@ public class UserControler {
 		}
 	}
 	
+	public boolean checkConnection(UserModel user)
+	{
+		DaoFabric daoFabric = DaoFabric.getInstance();		
+		UserDao userDao = daoFabric.createUserDao();
+		return userDao.testCo(user); 
+	}
+	
 	
 }

@@ -117,4 +117,38 @@ public class UserDao {
 		}
 		return true;
 	}
+	
+	public boolean testCo(UserModel user)
+	{
+		String sql;
+		int logintrouve =1;
+		sql="select count(*) AS total from user where ( login like '"+user.getLogin()+"' and pwd like '"+user.getPwd()+"')"; 
+		try {
+			java.sql.Statement query = connection.createStatement();
+			 ResultSet r = query.executeQuery(sql);
+			 while(r.next())
+			 {
+				 logintrouve= r.getInt("total");
+				 if(logintrouve==0)
+				 {
+					 break;
+				 }
+			 }
+				 connection.close();
+			 
+			 
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		if(logintrouve==0)
+		 {
+			 return true;
+		 }else
+		 {
+			 return false;
+		 }
+		
+	}
+	
 }
