@@ -9,55 +9,84 @@
 	<ui:composition template="./MasterPage.xhtml">
 
 		<ui:define name="body">
-			<h:form>
+			<div class="bs-example">
 				<h3>Inscription</h3>
-				<table border="0">
-					<tr>
-						<td>Your Fisrtname</td>
-						<td><h:inputText id="firstname"
+				<h:form id="formRegister" class="form-horizontal" rendered="true">
+						<div class="form-group">
+						<h:outputText class="col-sm-2 control-label"
+							value="Your Fisrtname"></h:outputText>
+						<div class="col-sm-4">
+							<h:inputText id="firstname" class="form-control"
 								value="#{UserSubmissionModelBean.firstname}" required="true">
 								<f:validator validatorId="validators.firstname"></f:validator>
-							</h:inputText></td>
-						<td>Your Lastname</td>
-						<td><h:inputText id="lastname"
-								value="#{UserSubmissionModelBean.lastname}" required="true">
-								<f:validator validatorId="validators.lastname"></f:validator>
-							</h:inputText></td>
-						<td>Your Age</td>
-						<td><h:inputText id="age"
-								value="#{UserSubmissionModelBean.age}" required="true">
-								<f:validator validatorId="validators.age"></f:validator>
-							</h:inputText></td>
-						<td>Your Mail</td>
-						<td><h:inputText id="email"
-								value="#{UserSubmissionModelBean.email}" required="true">
-								<f:validator validatorId="validators.email"></f:validator>
-							</h:inputText></td>
-						<td>Your Login</td>
-						<td><h:inputText id="login"
-								value="#{UserSubmissionModelBean.login}" required="true">
-								<f:validator validatorId="validators.login"></f:validator>
-							</h:inputText></td>
-						<td>Your Pwd</td>
-						<td><h:inputText id="pwd"
-								value="#{UserSubmissionModelBean.pwd}" required="true"
-								binding="#{pass}">
-							</h:inputText></td>
-						<td>Re enter Your Pwd</td>
-						<td><h:inputText id="repwd"
-								value="#{UserSubmissionModelBean.repwd}" required="true">
-								<f:validator validatorId="validators.password"></f:validator>
-								<f:attribute name="premPass" value="#{pass}" />
-							</h:inputText></td>
+							</h:inputText>
+						</div>
+						</div>
+						<div class="form-group">
+							<h:outputText class="col-sm-2 control-label"
+								value="Your Lastname"></h:outputText>
+							<div class="col-sm-4">
+								<h:inputText id="lastname" class="form-control"
+									value="#{UserSubmissionModelBean.lastname}" required="true">
+									<f:validator validatorId="validators.lastname"></f:validator>
+								</h:inputText>
+							</div>
 
-					</tr>
-					<tr>
-						<td><h:commandButton value="OK"
+						</div>
+						<div class="form-group">
+							<h:outputText class="col-sm-2 control-label" value="Your Age"></h:outputText>
+							<div class="col-sm-4">
+								<h:inputText id="age" class="form-control"
+									value="#{UserSubmissionModelBean.age}" required="true">
+									<f:validator validatorId="validators.age"></f:validator>
+								</h:inputText>
+							</div>
+						</div>
+						<div class="form-group">
+							<h:outputText class="col-sm-2 control-label" value="Your Mail"></h:outputText>
+							<div class="col-sm-4">
+								<h:inputText id="email" class="form-control"
+									value="#{UserSubmissionModelBean.email}" required="true">
+									<f:validator validatorId="validators.email"></f:validator>
+								</h:inputText>
+							</div>
+						</div>
+						<div class="form-group">
+							<h:outputText class="col-sm-2 control-label" value="Your Login"></h:outputText>
+							<div class="col-sm-4">
+								<h:inputText id="login" class="form-control"
+									value="#{UserSubmissionModelBean.login}" required="true">
+									<f:validator validatorId="validators.login"></f:validator>
+								</h:inputText>
+							</div>
+						</div>
+						<div class="form-group">
+							<h:outputText class="col-sm-2 control-label" value="Your Pwd"></h:outputText>
+							<div class="col-sm-4">
+								<h:inputText id="pwd" class="form-control"
+									value="#{UserSubmissionModelBean.pwd}" required="true"
+									binding="#{pass}">
+								</h:inputText>
+							</div>
+						</div>
+						<div class="form-group">
+							<h:outputText class="col-sm-2 control-label"
+								value="Re enter Your Pwd"></h:outputText>
+							<div class="col-sm-4">
+								<h:inputText id="repwd" class="form-control"
+									value="#{UserSubmissionModelBean.repwd}" required="true">
+									<f:validator validatorId="validators.password"></f:validator>
+									<f:attribute name="premPass" value="#{pass}" />
+								</h:inputText>
+							</div>
+						</div>
+						<div class="form-group">
+							<h:commandButton value="OK" class="btn btn-default"
 								action="#{UserSubmissionModelBean.addUser(UserSubmissionModel)}" />
-						</td>
-					</tr>
-				</table>
-			</h:form>
+						</div>
+				</h:form>
+			</div>
+
 		</ui:define>
 	</ui:composition>
 </h:body>

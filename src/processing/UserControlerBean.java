@@ -6,6 +6,8 @@ import model.UserModel;
 import fabric.DaoFabric;
 import instance.UserDao;
 
+@ManagedBean(name="userControler")
+
 public class UserControlerBean {
 	//actions relatives aux utilisateurs
 	
