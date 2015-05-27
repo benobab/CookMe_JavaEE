@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
 
 import model.UserModel;
 import fabric.DaoFabric;
@@ -35,8 +34,16 @@ public class UserControler {
 	public boolean addUser(UserModel user){
 		DaoFabric daoFabric = DaoFabric.getInstance();		
 		UserDao userDao = daoFabric.createUserDao();
-		//On laisse la Dao gérer
-		return userDao.addUser(user);
+		
+		if(userDao.checkLogin(user.getLogin()))//renvoie true si on peut ajouter un user
+		{
+			//On laisse la Dao gérer
+			return userDao.addUser(user);
+		}else
+		{
+			return false;
+		}
 	}
+	
 	
 }

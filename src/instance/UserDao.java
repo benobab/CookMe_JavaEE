@@ -61,6 +61,38 @@ public class UserDao {
 		return userList;
 	}
 	
+	public boolean checkLogin(String log)
+	{
+		String sql;
+		int logintrouve =1;
+		sql="select count(*) AS total from user where login like '"+log+"'";
+		try {
+			java.sql.Statement query = connection.createStatement();
+			 ResultSet r = query.executeQuery(sql);
+			 while(r.next())
+			 {
+				 logintrouve= r.getInt("total");
+				 if(logintrouve==0)
+				 {
+					 break;
+				 }
+			 }
+				 connection.close();
+			 
+			 
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		if(logintrouve==0)
+		 {
+			 return true;
+		 }else
+		 {
+			 return false;
+		 }
+	}
+	
 	public boolean addUser(UserModel user)
 	{
 		try {
