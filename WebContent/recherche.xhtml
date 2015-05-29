@@ -1,10 +1,73 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
 
-</body>
+<h:body>
+	<ui:composition template="./MasterPage.xhtml">
+
+		<ui:define name="body">
+			<div class="col-md-12">
+				<h3>Tell me what do you want !! </h3>
+			</div>
+			<h:form>
+				<div>
+					<div>
+						<div><div class="form-group col-md-6">
+							<h:outputText class="col-sm-2 control-label" value="Temps de préparation"></h:outputText>
+							<div class="col-sm-4">
+								<h:inputText id="age" class="form-control"
+									value="preparation" required="true">
+									<f:validator validatorId="validators.age"></f:validator>
+								</h:inputText>
+							</div>
+						</div></div>
+						<div><div class="form-group col-md-6">
+							<h:outputText class="col-sm-2 control-label" value="Cook expertise"></h:outputText>
+							<div class="col-sm-4">
+								<h:inputText id="difficulte" class="form-control"
+									value="difficulte" required="true">
+									<f:validator validatorId="validators.age"></f:validator>
+								</h:inputText>
+							</div>
+						</div></div>
+					</div>
+					<div>
+						<div><div class="form-group">
+							<h:outputText class="col-sm-2 control-label" value="For how many people"></h:outputText>
+							<div class="col-sm-4">
+								<h:inputText id="age" class="form-control"
+									value="personnes" required="true">
+									<f:validator validatorId="validators.age"></f:validator>
+								</h:inputText>
+							</div>
+						</div></div>
+						<div><div class="form-group">
+							<h:outputText class="col-sm-2 control-label" value="Cook type"></h:outputText>
+							<div class="col-sm-4">
+								<h:selectOneMenu id="type" class="form-control"
+									value="#{RecipeControlerBean.getRecipes()}" required="true">
+										<select size="1"> 
+											<option value="Cheese"> Cheese </option>
+										</select>
+								</h:selectOneMenu>
+							</div>
+						</div></div>
+					</div>
+				</div>
+			</h:form>
+			<div class="col-md-6">
+				<h:form>
+					<div class="form-group">
+							<h:commandButton value="Teach Me" class="btn btn-default"
+								action="#{RecipeControlerBean.getRecipes(userModelBean)}" />
+						</div>
+				</h:form>
+				
+			</div>
+		</ui:define>
+	</ui:composition>
+</h:body>
 </html>
