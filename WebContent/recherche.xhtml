@@ -10,62 +10,80 @@
 
 		<ui:define name="body">
 			<div class="col-md-12">
-				<h3>Tell me what do you want !! </h3>
+				<h3>Tell me what do you want !!</h3>
 			</div>
 			<h:form>
 				<div>
 					<div>
-						<div><div class="form-group col-md-6">
-							<h:outputText class="col-sm-2 control-label" value="Temps de préparation"></h:outputText>
-							<div class="col-sm-4">
-								<h:inputText id="age" class="form-control"
-									value="preparation" required="true">
-									<f:validator validatorId="validators.age"></f:validator>
-								</h:inputText>
+						<div>
+							<div class="form-group col-md-12">
+								<h:outputText class="col-sm-2 control-label" value="Temps de préparation"></h:outputText>
+								<div class="col-sm-4">
+									<h:selectOneMenu value="#{RecipeModelBean.preparation}">
+										<f:selectItem itemValue="00:05" itemLabel="5 minutes" />
+										<f:selectItem itemValue="00:10" itemLabel="10 minutes" />
+										<f:selectItem itemValue="00:15" itemLabel="15 minutes" />
+										<f:selectItem itemValue="00:20" itemLabel="20 minutes" />
+										<f:selectItem itemValue="00:25" itemLabel="25 minutes" />
+										<f:selectItem itemValue="00:30" itemLabel="30 minutes" />
+										<f:selectItem itemValue="00:45" itemLabel="45 minutes" />
+									</h:selectOneMenu>
+								</div>
 							</div>
-						</div></div>
-						<div><div class="form-group col-md-6">
-							<h:outputText class="col-sm-2 control-label" value="Cook expertise"></h:outputText>
-							<div class="col-sm-4">
-								<h:inputText id="difficulte" class="form-control"
-									value="difficulte" required="true">
-									<f:validator validatorId="validators.age"></f:validator>
-								</h:inputText>
+						</div>
+						<div>
+							<div class="form-group col-md-12">
+								<h:outputText class="col-sm-2 control-label" value="Cook expertise"></h:outputText>
+								<div class="col-sm-4">
+									<h:selectOneMenu value="#{RecipeModelBean.difficulte}">
+										<f:selectItem itemValue="1" itemLabel="Très facile" />
+										<f:selectItem itemValue="2" itemLabel="Facile" />
+										<f:selectItem itemValue="3" itemLabel="Moyen" />
+										<f:selectItem itemValue="4" itemLabel="Difficile" />
+										<f:selectItem itemValue="5" itemLabel="Très difficile" />
+									</h:selectOneMenu>
+								</div>
 							</div>
-						</div></div>
+						</div>
 					</div>
 					<div>
-						<div><div class="form-group">
-							<h:outputText class="col-sm-2 control-label" value="For how many people"></h:outputText>
-							<div class="col-sm-4">
-								<h:inputText id="personnes" class="form-control"
-									value="personnes" required="true">
-									<f:validator validatorId="validators.age"></f:validator>
-								</h:inputText>
+						<div>
+							<div class="form-group">
+								<h:outputText class="col-md-12 control-label" value="For how many people"></h:outputText>
+								<div class="col-md-6">
+									<h:selectOneMenu value="#{RecipeModelBean.personnes}">
+										<f:selectItem itemValue="1" itemLabel="1 personne" />
+										<f:selectItem itemValue="2" itemLabel="2 personnes" />
+										<f:selectItem itemValue="3" itemLabel="3 personnes" />
+										<f:selectItem itemValue="4" itemLabel="4 personnes" />
+										<f:selectItem itemValue="5" itemLabel="5 personnes" />
+										<f:selectItem itemValue="6" itemLabel="6 personnes" />
+										<f:selectItem itemValue="7" itemLabel="7 personnes" />
+									</h:selectOneMenu>
+								</div>
 							</div>
-						</div></div>
-						<div><div class="form-group">
-							<h:outputText class="col-sm-2 control-label" value="Cook type"></h:outputText>
-							<div class="col-sm-4">
-								<h:selectOneMenu id="type" class="form-control"
-									value="#{RecipeControlerBean.getRecipes()}" required="true">
-										<select size="1"> 
-											<option value="Cheese"> Cheese </option>
-										</select>
-								</h:selectOneMenu>
+						</div>
+						<div>
+							<div class="form-group">
+								<h:outputText class="col-md-12" value="Cook type"></h:outputText>
+								<div class="col-sm-4">
+									<h:selectOneMenu value="#{RecipeModelBean.type}">
+										<f:selectItems value="#{RecipeControlerBean.getRecipesTypes()}" />
+									</h:selectOneMenu>
+								</div>
 							</div>
-						</div></div>
+						</div>
 					</div>
 				</div>
 			</h:form>
 			<div class="col-md-12">
 				<h:form>
 					<div class="form-group">
-							<h:commandButton value="Teach Me" class="btn btn-default"
-								action="#{RecipeControlerBean.getRecipes(userModelBean)}" />
-						</div>
+						<h:commandButton value="Teach Me" class="btn btn-default"
+							action="#{RecipeControlerBean.getRecipes(RecipeModelBean.personnes,RecipeModelBean.difficulte,RecipeModelBean.time, RecipeModelBean.type)}" />
+					</div>
 				</h:form>
-				
+
 			</div>
 		</ui:define>
 	</ui:composition>
