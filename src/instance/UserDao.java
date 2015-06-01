@@ -123,6 +123,7 @@ public class UserDao {
 		String sql;
 		int logintrouve =1;
 		sql="select count(*) AS total from user where ( login like '"+user.getLogin()+"' and pwd like '"+user.getPwd()+"')"; 
+		System.out.println(sql);
 		try {
 			java.sql.Statement query = connection.createStatement();
 			 ResultSet r = query.executeQuery(sql);
@@ -143,10 +144,10 @@ public class UserDao {
 		}
 		if(logintrouve==0)
 		 {
-			 return true;
+			 return false;
 		 }else
 		 {
-			 return false;
+			 return true;
 		 }
 		
 	}

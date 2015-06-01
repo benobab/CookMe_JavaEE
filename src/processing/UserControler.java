@@ -49,6 +49,7 @@ public class UserControler {
 	{
 		DaoFabric daoFabric = DaoFabric.getInstance();		
 		UserDao userDao = daoFabric.createUserDao();
+		System.out.println(userDao.testCo(user));
 		return userDao.testCo(user); 
 	}
 	
