@@ -15,7 +15,7 @@ import fabric.DaoFabric;
 @ApplicationScoped
 public class RecipeControler {
 	//actions relatives aux recettes
-	
+	ArrayList<RecipeModel> recipeTmp = new ArrayList<RecipeModel>();
 	
 	public ArrayList<RecipeModel> getRecipes()
 	{
@@ -23,6 +23,19 @@ public class RecipeControler {
 		RecipesDao recipedao =daofabric.createRecipesDao();
 		
 		return recipedao.getRecipes();
+	}
+	
+	public ArrayList<String> getRecipesString(int pers,int diff, Time time, String type)
+	{
+		ArrayList<RecipeModel> recipesArray = this.getRecipes(pers,diff,time,type);
+		ArrayList<String> recipesString = new ArrayList<String>();
+		for(RecipeModel r : recipesArray)
+		{
+			recipesString.add(r.getTitre());
+			System.out.println("<h3>"+r.getTitre()+"</h3><br />");
+		}
+		
+		return recipesString;
 	}
 	
 	public ArrayList<RecipeModel> getRecipes(int pers,int diff, Time time, String type)
@@ -59,6 +72,7 @@ public class RecipeControler {
 				returnArray.add(r);
 			}
 		}
+		recipeTmp.addAll(returnArray);
 		return returnArray;
 	}
 	

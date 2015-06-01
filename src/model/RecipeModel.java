@@ -2,7 +2,15 @@ package model;
 
 import java.sql.Time;
 
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+
+@ManagedBean(name = "recipeModelBean")
+@SessionScoped
 public class RecipeModel {
+	
+	
+
 
 	
 	//une recette
@@ -15,7 +23,8 @@ public class RecipeModel {
 	private String titre;
 	private String img;
 	
-	
+	public RecipeModel()
+	{}
 	public RecipeModel(Time prepa,int diff, int pers, String type, String resume, String procedure, String titre, String img)
 	{
 		this.preparation = prepa;
