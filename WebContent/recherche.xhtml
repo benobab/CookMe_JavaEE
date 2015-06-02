@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core">
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
 
 <h:body>
 	<ui:composition template="./MasterPage.xhtml">
@@ -17,30 +18,21 @@
 						<div>
 							<div class="form-group col-md-12">
 								<h:outputText class="col-sm-2 control-label" value="Temps de préparation"></h:outputText>
-								<div class="col-sm-4">
-									<h:selectOneMenu value="#{recipeModelBean.preparation}">
-										<f:selectItem itemValue="00:05" itemLabel="5 minutes" />
-										<f:selectItem itemValue="00:10" itemLabel="10 minutes" />
-										<f:selectItem itemValue="00:15" itemLabel="15 minutes" />
-										<f:selectItem itemValue="00:20" itemLabel="20 minutes" />
-										<f:selectItem itemValue="00:25" itemLabel="25 minutes" />
-										<f:selectItem itemValue="00:30" itemLabel="30 minutes" />
-										<f:selectItem itemValue="00:45" itemLabel="45 minutes" />
-									</h:selectOneMenu>
-								</div>
+								<p:outputLabel for="time" value="Temps de préparation :" />
+								<p:calendar id="time" value="#{recipeModelBean.preparation}" pattern="HH:mm a" timeOnly="true" />
 							</div>
 						</div>
 						<div>
 							<div class="form-group col-md-12">
 								<h:outputText class="col-sm-2 control-label" value="Cook expertise"></h:outputText>
 								<div class="col-sm-4">
-									<h:selectOneMenu value="#{recipeModelBean.difficulte}">
+									<p:selectOneMenu  id="difficulte" value="#{recipeModelBean.difficulte}" style="width:125px">
 										<f:selectItem itemValue="1" itemLabel="Très facile" />
 										<f:selectItem itemValue="2" itemLabel="Facile" />
 										<f:selectItem itemValue="3" itemLabel="Moyen" />
 										<f:selectItem itemValue="4" itemLabel="Difficile" />
 										<f:selectItem itemValue="5" itemLabel="Très difficile" />
-									</h:selectOneMenu>
+									</p:selectOneMenu>
 								</div>
 							</div>
 						</div>
@@ -48,17 +40,12 @@
 					<div>
 						<div>
 							<div class="form-group">
-								<h:outputText class="col-md-12 control-label" value="For how many people"></h:outputText>
-								<div class="col-md-6">
-									<h:selectOneMenu value="#{recipeModelBean.personnes}">
-										<f:selectItem itemValue="1" itemLabel="1 personne" />
-										<f:selectItem itemValue="2" itemLabel="2 personnes" />
-										<f:selectItem itemValue="3" itemLabel="3 personnes" />
-										<f:selectItem itemValue="4" itemLabel="4 personnes" />
-										<f:selectItem itemValue="5" itemLabel="5 personnes" />
-										<f:selectItem itemValue="6" itemLabel="6 personnes" />
-										<f:selectItem itemValue="7" itemLabel="7 personnes" />
-									</h:selectOneMenu>
+								<div class="col-md-12">
+								<h:panelGrid columns="1" style="margin-bottom:10 px">
+									<h:outputText id="output" value="For how many people" />
+									<h:inputHidden id="txt2" value="#{recipeModelBean.personnes}" />
+									<p:slider for="txt2" display="output" style="width: 200px" displayTemplate="Nombre de participants au repas :{value} "/>
+								</h:panelGrid>
 								</div>
 							</div>
 						</div>
@@ -66,9 +53,9 @@
 							<div class="form-group">
 								<h:outputText class="col-md-12" value="Cook type"></h:outputText>
 								<div class="col-sm-4">
-									<h:selectOneMenu value="#{recipeModelBean.type}">
+									<p:selectOneMenu value="#{recipeModelBean.type}">
 										<f:selectItems value="#{recipeControlerBean.getRecipesTypes()}" />
-									</h:selectOneMenu>
+									</p:selectOneMenu>
 								</div>
 							</div>
 						</div>
@@ -88,7 +75,6 @@
 					<p class="text-center">
 						<button type="submit" class="btn btn-success btn-lg">Voir les résultats</button>
 					</p>
-					
 				</form>
 			</div>
 		</ui:define>
