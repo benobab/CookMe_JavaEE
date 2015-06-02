@@ -4,12 +4,14 @@ import java.util.ArrayList;
 
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 
 import model.UserModel;
 import fabric.DaoFabric;
 import instance.UserDao;
 
-@ManagedBean(name = "userControlerBean")
+@RequestScoped ( from javax.enterprise.context.RequestScoped) 
+@Named("LoginBean")
 @ApplicationScoped
 public class UserControler {
 	//actions relatives aux utilisateurs

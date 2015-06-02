@@ -7,6 +7,10 @@
 + 2.4.1 validation ajax lors de la connexion : si echec on l'affiche et si succes, affichage bonjour Jdoe, N users online + bouton de logout en haut à droite
 + 4.2.1 interface d'admin lorsqu'il clique sur users ou recipe (très similaire)
 
+	02/06/15 @TdF : 2.2.1 : Fait pour les pages de resultats et de recherche. Adaptation rapide et simple pour les autres.
+						2.4.1 : Pour les validations ajax j'arrive a le faire fonctionner pour un appel simple mais pour un appel avec le userConnectionBean :(
+						4.2.1 : Pas regard�
+
 
 ##Guillaume
 
