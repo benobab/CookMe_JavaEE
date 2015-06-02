@@ -11,7 +11,7 @@ import javax.faces.bean.ManagedBean;
 
 import fabric.DaoFabric;
 
-@ManagedBean(name = "RecipeControlerBean")
+@ManagedBean(name = "recipeControlerBean")
 @ApplicationScoped
 public class RecipeControler {
 	//actions relatives aux recettes

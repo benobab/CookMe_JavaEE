@@ -67,7 +67,7 @@
 								<h:outputText class="col-md-12" value="Cook type"></h:outputText>
 								<div class="col-sm-4">
 									<h:selectOneMenu value="#{recipeModelBean.type}">
-										<f:selectItems value="#{RecipeControlerBean.getRecipesTypes()}" />
+										<f:selectItems value="#{recipeControlerBean.getRecipesTypes()}" />
 									</h:selectOneMenu>
 								</div>
 							</div>
@@ -79,7 +79,7 @@
 				<h:form>
 					<div class="form-group">
 						<h:commandButton value="Teach Me" class="btn btn-default"
-							action="#{RecipeControlerBean.getRecipes(recipeModelBean.personnes,recipeModelBean.difficulte,recipeModelBean.preparation, recipeModelBean.type)}" />
+							action="#{recipeControlerBean.getRecipes(recipeModelBean.personnes,recipeModelBean.difficulte,recipeModelBean.preparation, recipeModelBean.type)}" />
 					</div>
 					
 				</h:form>

@@ -12,7 +12,7 @@ import javax.faces.validator.ValidatorException;
 
 @FacesValidator(value = "validators.age")
 public class AgeValidator implements Validator {
-private static final String AGE_PATTERN = "(\\d\\d)" ; 
+private static final String AGE_PATTERN = "([0-9]{1,2})" ; 
 private Pattern pattern;
 private Matcher matcher;
 

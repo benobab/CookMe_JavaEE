@@ -12,12 +12,12 @@ import javax.faces.validator.ValidatorException;
 
 @FacesValidator(value = "validators.email")
 public class EmailValidator implements Validator {
-private static final String MAIL_PATTERN = "[a-zA-Z0-9-._]+@[a-zA-Z0-9-._].[a-z]+" ; 
-private Pattern pattern;
+private static final String MAIL_PATTERN = "^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$"; 
+private Pattern pattern = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
 private Matcher matcher;
 
 public EmailValidator() {
-	pattern = Pattern.compile(MAIL_PATTERN);
+	
 }
 @Override
 public void validate (FacesContext context, UIComponent component, Object value) throws ValidatorException {
