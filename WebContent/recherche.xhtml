@@ -12,51 +12,54 @@
 			<div class="col-md-12">
 				<h3>Tell me what do you want !!</h3>
 			</div>
-			<h:form>
+			<h:form id="formRegister" class="form-horizontal" rendered="true">
 				<div>
 					<div>
 						<div>
 							<div class="form-group col-md-12">
-								<h:outputText class="col-sm-2 control-label" value="Temps de préparation"></h:outputText>
+								<h:outputText class="col-sm-2 control-label"
+									value="Temps de préparation"></h:outputText>
 								<p:outputLabel for="time" value="Temps de préparation :" />
-								<p:calendar id="time" value="#{recipeModelBean.preparation}" pattern="HH:mm a" timeOnly="true" />
+								<p:calendar id="time" value="#{recipeModelBean.preparation}"
+									pattern="HH:mm" timeOnly="true" />
 							</div>
 						</div>
-						<div>
-							<div class="form-group col-md-12">
-								<h:outputText class="col-sm-2 control-label" value="Cook expertise"></h:outputText>
-								<div class="col-sm-4">
-									<p:selectOneMenu  id="difficulte" value="#{recipeModelBean.difficulte}" style="width:125px">
-										<f:selectItem itemValue="1" itemLabel="Très facile" />
-										<f:selectItem itemValue="2" itemLabel="Facile" />
-										<f:selectItem itemValue="3" itemLabel="Moyen" />
-										<f:selectItem itemValue="4" itemLabel="Difficile" />
-										<f:selectItem itemValue="5" itemLabel="Très difficile" />
-									</p:selectOneMenu>
-								</div>
+						<div class="form-group col-md-12 center">
+							<h:outputText class="col-sm-2 control-label"
+								value="Cook expertise"></h:outputText>
+							<div class="col-sm-4">
+								<p:selectOneMenu id="difficulte"
+									value="#{recipeModelBean.difficulte}" style="width:125px">
+									<f:selectItem itemValue="1" itemLabel="Très facile" />
+									<f:selectItem itemValue="2" itemLabel="Facile" />
+									<f:selectItem itemValue="3" itemLabel="Moyen" />
+									<f:selectItem itemValue="4" itemLabel="Difficile" />
+									<f:selectItem itemValue="5" itemLabel="Très difficile" />
+								</p:selectOneMenu>
 							</div>
 						</div>
 					</div>
+					
 					<div>
 						<div>
 							<div class="form-group">
 								<div class="col-md-12">
-								<h:panelGrid columns="1" style="margin-bottom:10 px">
-									<h:outputText id="output" value="For how many people" />
-									<h:inputHidden id="txt2" value="#{recipeModelBean.personnes}" />
-									<p:slider for="txt2" display="output" style="width: 200px" displayTemplate="Nombre de participants au repas :{value} "/>
-								</h:panelGrid>
+									<h:panelGrid columns="1" style="margin-bottom:10 px">
+										<h:outputText id="output" value="For how many people" />
+										<h:inputHidden id="txt2" value="#{recipeModelBean.personnes}" />
+										<p:slider for="txt2" display="output" style="width: 200px"
+											displayTemplate="Nombre de participants au repas :{value} " />
+									</h:panelGrid>
 								</div>
 							</div>
 						</div>
-						<div>
-							<div class="form-group">
-								<h:outputText class="col-md-12" value="Cook type"></h:outputText>
-								<div class="col-sm-4">
-									<p:selectOneMenu value="#{recipeModelBean.type}">
-										<f:selectItems value="#{recipeControlerBean.getRecipesTypes()}" />
-									</p:selectOneMenu>
-								</div>
+
+						<div class="form-group">
+							<h:outputText class="col-md-12" value="Cook type"></h:outputText>
+							<div class="col-sm-4">
+								<p:selectOneMenu value="#{recipeModelBean.type}">
+									<f:selectItems value="#{recipeControlerBean.getRecipesTypes()}" />
+								</p:selectOneMenu>
 							</div>
 						</div>
 					</div>
@@ -68,14 +71,35 @@
 						<h:commandButton value="Teach Me" class="btn btn-default"
 							action="#{recipeControlerBean.getRecipes(recipeModelBean.personnes,recipeModelBean.difficulte,recipeModelBean.preparation, recipeModelBean.type)}" />
 					</div>
-					
 				</h:form>
-				
-				<form class="margin-base-vertical" action="resultats.jsf">
+				<form class="margin-base-vertical" action="recherche.jsf">
 					<p class="text-center">
-						<button type="submit" class="btn btn-success btn-lg">Voir les résultats</button>
+						<button type="submit" class="btn btn-success btn-lg">Voir
+							les résultats</button>
 					</p>
 				</form>
+				
+				
+				<p:dataTable value="#{recipeControlerBean.getRecipesString(recipeModelBean.personnes,recipeModelBean.difficulte,recipeModelBean.preparation, recipeModelBean.type)}" var="u" border="1">
+							<p:column>
+								<f:facet name="header">
+									Titre
+								</f:facet>
+								#{u.titre}
+							</p:column>
+							<p:column>
+								<f:facet name="header">
+									Resumé
+								</f:facet>
+								#{u.resume}
+							</p:column>
+							<p:column>
+								<f:facet name="header">
+									Preparation
+								</f:facet>
+								#{u.preparation}
+							</p:column>
+			 	</p:dataTable>
 			</div>
 		</ui:define>
 	</ui:composition>
