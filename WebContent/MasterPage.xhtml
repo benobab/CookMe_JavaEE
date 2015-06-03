@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:f="http://java.sun.com/jsf/core">
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
@@ -15,7 +16,7 @@
 	<div class="container-fluid">
 		<div id="header" class="row">
 			<div id="title" class="col-md-6">
-				<ui:insert name="title">Default Section Title</ui:insert>
+				<ui:insert name="title">Accueil</ui:insert>
 			</div>
 			<div id="becomeMember" class="col-md-2)">
 				<form class="margin-base-vertical" action="inscription.jsf">
@@ -54,13 +55,17 @@
 		</div>
 
 		<div id="body" class="row">
-			<ui:insert name="body">Default Section Content</ui:insert>
+			<ui:insert name="body">
+			
+			</ui:insert>
+			
 		</div>
 
 		<div id="footer" class="row">
 			<div class="col-md-8">
 				<p>Copyright 2015 guiBra / tristandefournas / benobab [on
-					Github]</p>
+					Github]
+				</p>
 			</div>
 			<div class="col-md-4">
 				<img id="logo" src="logo.png" />

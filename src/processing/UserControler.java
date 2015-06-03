@@ -5,16 +5,16 @@ import java.util.ArrayList;
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+ 
 
 import model.UserModel;
 import fabric.DaoFabric;
 import instance.UserDao;
-
-@RequestScoped ( from javax.enterprise.context.RequestScoped) 
-@Named("LoginBean")
+ 
+@ManagedBean(name = "userControlerBean")
 @ApplicationScoped
-public class UserControler {
-	//actions relatives aux utilisateurs
+ public class UserControler {
+ 	//actions relatives aux utilisateurs
 	
 	public boolean checkUser(UserModel user){
 		

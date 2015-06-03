@@ -64,7 +64,7 @@ public class RecipesDao {
 		ArrayList<RecipeModel> recipeList = new ArrayList<RecipeModel>();
 		
 		String sql;
-		sql="SELECT * FROM RECETTE";
+		sql="SELECT * FROM `recette`";
 		try {
 			java.sql.Statement query = connection.createStatement();
 			 ResultSet r = query.executeQuery(sql);
