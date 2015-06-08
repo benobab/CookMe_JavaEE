@@ -1,13 +1,16 @@
 package processing;
 
-import java.sql.Time;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Map;
 
 import instance.RecipesDao;
 import model.RecipeModel;
 
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
+import javax.faces.context.ExternalContext;
+import javax.faces.context.FacesContext;
 
 import fabric.DaoFabric;
 
@@ -15,7 +18,6 @@ import fabric.DaoFabric;
 @ApplicationScoped
 public class RecipeControler {
 	//actions relatives aux recettes
-	ArrayList<RecipeModel> recipeTmp = new ArrayList<RecipeModel>();
 	
 	public ArrayList<RecipeModel> getRecipes()
 	{
@@ -25,54 +27,58 @@ public class RecipeControler {
 		return recipedao.getRecipes();
 	}
 	
-	public ArrayList<String> getRecipesString(int pers,int diff, Time time, String type)
+	public ArrayList<RecipeModel> getCurrentRecipes()
 	{
-		ArrayList<RecipeModel> recipesArray = this.getRecipes(pers,diff,time,type);
-		ArrayList<String> recipesString = new ArrayList<String>();
-		for(RecipeModel r : recipesArray)
+		// r�cup�re l'espace de m�moire de JSF
+		ExternalContext externalContext = FacesContext.getCurrentInstance().getExternalContext();
+		Map<String, Object> sessionMap = externalContext.getSessionMap();
+		// place la liste de recette dans l'espace de m�moire de JSF
+		ArrayList<RecipeModel> rt = new ArrayList();
+		rt.addAll((Collection) sessionMap.get("recipeList"));
+		for(RecipeModel r : rt)
 		{
-			recipesString.add(r.getTitre());
-			System.out.println("<h3>"+r.getTitre()+"</h3><br />");
+			System.out.println(r.getTitre());
 		}
-		
-		return recipesString;
+		return rt;
 	}
 	
-	public ArrayList<RecipeModel> getRecipes(int pers,int diff, Time time, String type)
+	
+	public String setCurrentRecipe(RecipeModel recipe)
+	{
+		ExternalContext externalContext = FacesContext.getCurrentInstance().getExternalContext();
+		Map<String, Object> sessionMap = externalContext.getSessionMap();
+		// place la liste de recette dans l'espace de m�moire de JSF
+		sessionMap.put("recipeList", this.getRecipes(recipe));
+		System.out.println("ok");
+		return("resultats.jsf");
+	}
+	
+	public ArrayList<RecipeModel> getRecipes(RecipeModel recipe)
 	{
 		
 		ArrayList<RecipeModel> returnArray = new ArrayList<RecipeModel>();
-		
-		returnArray.addAll(this.getRecipesByDifficulties(diff));
-		for(RecipeModel r: this.getRecipesByDifficulties(diff))
+		returnArray.addAll(this.getRecipesByDifficulties(recipe.getDifficulte()));
+		for(RecipeModel r: this.getRecipesByNbrOfPersonnes(recipe.getPersonnes()))
 		{
 			if(!returnArray.contains(r))
 			{
 				returnArray.add(r);
 			}
 		}
-		for(RecipeModel r: this.getRecipesByNbrOfPersonnes(pers))
+		for(RecipeModel r: this.getRecipesByType(recipe.getType()))
 		{
 			if(!returnArray.contains(r))
 			{
 				returnArray.add(r);
 			}
 		}
-		for(RecipeModel r: this.getRecipesByType(type))
+		for(RecipeModel r: this.getRecipesByPreparation(recipe.getPreparation()))
 		{
 			if(!returnArray.contains(r))
 			{
 				returnArray.add(r);
 			}
 		}
-		for(RecipeModel r: this.getRecipesByPreparation(time))
-		{
-			if(!returnArray.contains(r))
-			{
-				returnArray.add(r);
-			}
-		}
-		recipeTmp.addAll(returnArray);
 		return returnArray;
 	}
 	
@@ -99,7 +105,7 @@ public class RecipeControler {
 		RecipesDao recipedao =daofabric.createRecipesDao();
 		ArrayList<RecipeModel> returnArray = new ArrayList<RecipeModel>();
 		for(RecipeModel r : recipedao.getRecipes())
-		{
+		{System.out.println(r.toString() + "diff : "+ r.getDifficulte()+ " vs : "+i);
 			if(r.getDifficulte()==i)
 			{
 				returnArray.add(r);
@@ -138,7 +144,7 @@ public class RecipeControler {
 		return returnArray;
 	}
 	
-	public ArrayList<RecipeModel> getRecipesByPreparation( Time t)
+	public ArrayList<RecipeModel> getRecipesByPreparation( int t)
 	{
 		DaoFabric daofabric = DaoFabric.getInstance();
 		RecipesDao recipedao =daofabric.createRecipesDao();

@@ -1,5 +1,6 @@
 package model;
 
+import java.sql.Date;
 import java.sql.Time;
 
 import javax.faces.bean.ManagedBean;
@@ -14,7 +15,7 @@ public class RecipeModel {
 
 	
 	//une recette
-	private Time preparation;
+	private int preparation;
 	private int difficulte;
 	private int personnes;
 	private String type;
@@ -25,7 +26,7 @@ public class RecipeModel {
 	
 	public RecipeModel()
 	{}
-	public RecipeModel(Time prepa,int diff, int pers, String type, String resume, String procedure, String titre, String img)
+	public RecipeModel(int prepa,int diff, int pers, String type, String resume, String procedure, String titre, String img)
 	{
 		this.preparation = prepa;
 		this.difficulte = diff;
@@ -39,12 +40,12 @@ public class RecipeModel {
 	}
 
 
-	public Time getPreparation() {
+	public int getPreparation() {
 		return preparation;
 	}
 
 
-	public void setPreparation(Time preparation) {
+	public void setPreparation(int preparation) {
 		this.preparation = preparation;
 	}
 

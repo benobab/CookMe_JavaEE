@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core">
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
 
 <h:body>
 	<ui:composition template="./MasterPage.xhtml">
@@ -15,38 +16,26 @@
 		</ui:define>
 		
 		<ui:define name="body">
-			<div class="col-md-12">
-				<h3>Tell me what do you want !!</h3>
-			</div>
-			<h:form>
-
-				<div class="form-group col-md-12">
-					<h:outputText class="col-md12 control-label"
-						value="Les recettes correspondantes :"></h:outputText>
-					<div class="col-md-10 center">
-						<h:dataTable value="#{recipeControlerBean.getRecipesString(recipeModelBean.personnes,recipeModelBean.difficulte,recipeModelBean.preparation, recipeModelBean.type)}" var="u" border="1">
-							<h:column>
+				<p:dataTable value="#{recipeControlerBean.getCurrentRecipes()}" var="u" border="1">
+							<p:column>
 								<f:facet name="header">
 									Titre
 								</f:facet>
-								#{u.titre}
-							</h:column>
-							<h:column>
+								#{u.getTitre()}
+							</p:column>
+							<p:column>
 								<f:facet name="header">
 									Resumé
 								</f:facet>
-								#{u.resume}
-							</h:column>
-							<h:column>
+								#{u.getResume()}
+							</p:column>
+							<p:column>
 								<f:facet name="header">
 									Preparation
 								</f:facet>
-								#{u.preparation}
-							</h:column>
-						</h:dataTable>
-					</div>
-				</div>
-			</h:form>
+								#{u.getPreparation()}
+							</p:column>
+			 	</p:dataTable>
 			<form class="margin-base-vertical" action="recherche.jsf">
 					<p class="text-center">
 						<button type="submit" class="btn btn-success btn-lg">Retour aux recherches</button>

@@ -11,7 +11,6 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
 	<title>Cook Me</title>
 </h:head>
-
 <h:body>
 	<div class="container-fluid">
 		<div id="header" class="row">
@@ -30,11 +29,9 @@
 				<form id="formConnect" class="form-horizontal" rendered="true">
 					<div class="form-group">
 						<h:panelGrid columns="3" cellpadding="5">
-
 	    					<h:outputText value="Username" />
 							<p:inputText  id="username" value="#{userModelBean.login}" title="Entrer ici votre login" />
 							<p:tooltip id="toolTipFocus" for="username" showEvent="focus" hideEvent="blur" />
-	    					
 	    					<h:outputText value="Password" />
 							<p:inputText  id="password" value="#{userModelBean.pwd}" title="Entrer ici votre mot de passe" />
 							<p:tooltip id="toolTipFocus2" for="password" showEvent="focus" hideEvent="blur" />
@@ -56,18 +53,14 @@
 				</h:form>
 			</div>
 		</div>
-
 		<div id="body" class="row">
 			<ui:insert name="body">
-
+			
 			</ui:insert>
-
 		</div>
-
 		<div id="footer" class="row">
 			<div class="col-md-8">
-				<p>© Copyright 2015 guiBra / tristandefournas / benobab [on
-					Github]</p>
+				<p>© Copyright 2015 guiBra / tristandefournas / benobab [on Github]</p>
 			</div>
 			<div class="col-md-4">
 				<img id="logo" src="logo.png" />

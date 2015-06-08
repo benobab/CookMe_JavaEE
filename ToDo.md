@@ -7,9 +7,10 @@
 + 2.4.1 validation ajax lors de la connexion : si echec on l'affiche et si succes, affichage bonjour Jdoe, N users online + bouton de logout en haut Ã  droite
 + 4.2.1 interface d'admin lorsqu'il clique sur users ou recipe (trÃ¨s similaire)
 
-	02/06/15 @TdF : 2.2.1 : Fait pour les pages de resultats et de recherche. Adaptation rapide et simple pour les autres.
-						2.4.1 : Pour les validations ajax j'arrive a le faire fonctionner pour un appel simple mais pour un appel avec le userConnectionBean :(
-						4.2.1 : Pas regardé
+	02/06/15 @TdF :
+  2.2.1 : Fait pour les pages de resultats et de recherche. Adaptation rapide et simple pour les autres.
+  2.4.1 : Pour les validations ajax j'arrive a le faire fonctionner pour un appel simple mais pour un appel avec le userConnectionBean :(
+	4.2.1 : Pas regardé
 
 
 ##Guillaume
@@ -21,7 +22,7 @@
 ##Ben
 
 + 3.2.1  datagrid de Recherche
-+ 3.2.1 affichage de recette Ã©galement
++ 3.2.1 affichage de recette egalement
 + 2.2.1 tooltips de contrainte de saisies OK
 + 3.2.1 bouton retour + interfaces de commentaires
 + 4.2.1 faire le AdminControlerBean qui fait appel a la dao getUsers() et RecipesDao !!!  et qui peut ecrire modifier un users le supprimer etc pareil pour les recettes supprimer modifier etc

@@ -51,7 +51,7 @@ public class RecipesDao {
 
 		try {
 			query = connection.createStatement();
-			query.execute("INSERT INTO RECETTE ( preparation, difficulte ,personnes ,type,resume,procedure,titre,img) VALUES ('"+recipe.getPreparation().toString()+"','"+recipe.getDifficulte()+"','"+recipe.getPersonnes()+"','"+recipe.getType()+"','"+recipe.getResume()+"','"+recipe.getProcedure()+"','"+recipe.getTitre()+"','"+recipe.getImg()+"')");	
+			query.execute("INSERT INTO RECETTE ( preparation, difficulte ,personnes ,type,resume,procedure,titre,img) VALUES ('"+recipe.getPreparation()+"','"+recipe.getDifficulte()+"','"+recipe.getPersonnes()+"','"+recipe.getType()+"','"+recipe.getResume()+"','"+recipe.getProcedure()+"','"+recipe.getTitre()+"','"+recipe.getImg()+"')");	
 			connection.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -70,13 +70,13 @@ public class RecipesDao {
 			 ResultSet r = query.executeQuery(sql);
 			 while(r.next())
 			 {
-				 RecipeModel recipe= new RecipeModel(null, 0,0, " ", " "," "," "," ");
+				 RecipeModel recipe= new RecipeModel(0, 0,0, " ", " "," "," "," ");
 				 recipe.setTitre(r.getString("titre"));
 				 recipe.setImg(r.getString("img"));
 				 recipe.setDifficulte(r.getInt("difficulte"));
 				 recipe.setType(r.getString("type"));
 				 recipe.setPersonnes(r.getInt("personnes"));
-				 recipe.setPreparation(r.getTime("preparation"));
+				 recipe.setPreparation(r.getInt("preparation"));
 				 recipe.setResume(r.getString("resume"));
 				 recipe.setProcedure(r.getString("procedure"));
 				 recipeList.add(recipe);
