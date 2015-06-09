@@ -39,8 +39,7 @@ public class AdminControler {
 	{
 		DaoFabric daoFabric = DaoFabric.getInstance();
 		UserDao userDao = daoFabric.createUserDao();
-		
-		
 	}
+	
 	
 }
