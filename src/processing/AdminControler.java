@@ -2,18 +2,29 @@ package processing;
 
 import java.util.ArrayList;
 
+import javax.faces.bean.ApplicationScoped;
+import javax.faces.bean.ManagedBean;
+
 import fabric.DaoFabric;
 import instance.UserDao;
 import model.UserModel;
 
+@ManagedBean(name = "adminControlerBean")
+@ApplicationScoped
 public class AdminControler {
 	//Actions relatives à l'interface d'administration
 	
-	public boolean isAdmin(UserModel user)
+	public String isAdmin(UserModel user)
 	{
 		DaoFabric daoFabric = DaoFabric.getInstance();
 		UserDao userDao = daoFabric.createUserDao();
-		return userDao.isAdmin(user);
+		if( userDao.isAdmin(user))
+		{
+			return ("selectAdmin.jsf");
+		}else
+		{
+			return ("login.jsf");
+		}
 	}
 	
 	public ArrayList<UserModel> getUsers(){

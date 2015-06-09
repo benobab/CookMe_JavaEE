@@ -1,0 +1,36 @@
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui" 
+	template="/masterPageAdmin.xhtml">
+
+
+
+	<ui:define name="body">
+		<form id="formConnect" class="form-horizontal" rendered="true">
+			<div class="form-group">
+				<h:panelGrid columns="3" cellpadding="5">
+					<h:outputText value="Username" />
+					<p:inputText id="username" value="#{userModelBean.login}"
+						title="Entrer ici votre login" />
+					<p:tooltip id="toolTipFocus" for="username" showEvent="focus"
+						hideEvent="blur" />
+					<h:outputText value="Password" />
+					<p:inputText id="password" value="#{userModelBean.pwd}"
+						title="Entrer ici votre mot de passe" />
+					<p:tooltip id="toolTipFocus2" for="password" showEvent="focus"
+						hideEvent="blur" />
+				</h:panelGrid>
+			</div>
+			<div class="form-group">
+				<h:commandButton id="btnOK" value="OK" class="btn btn-default"
+					action="#{adminControlerBean.isAdmin (userModelBean)}">
+				</h:commandButton>
+			</div>
+		</form>
+	</ui:define>
+
+</ui:composition>
+
