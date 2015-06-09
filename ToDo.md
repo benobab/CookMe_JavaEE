@@ -22,7 +22,7 @@
 ##Ben
 
 + 3.2.1  datagrid de Recherche __--> probleme .... !!!!__
-+ 3.2.1 affichage de recette egalement __--> OK sans datagrid, à enrichir__
++ 3.2.1 affichage de recette egalement __--> OK sans datagrid, à enrichir avec datagrid si on veut vraiment l'utiliser __
 + 2.2.1 tooltips de contrainte de saisies __OK__
 + 3.2.1 bouton retour + interfaces de commentaires
 + 4.2.1 faire le AdminControlerBean qui fait appel a la dao getUsers() et RecipesDao !!!  et qui peut ecrire modifier un users le supprimer etc pareil pour les recettes supprimer modifier etc
