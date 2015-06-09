@@ -1,3 +1,7 @@
 /build/
 
 
+
+WebContent/bower.json
+
+build/classes/instance/UserDao.class

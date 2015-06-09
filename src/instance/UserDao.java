@@ -128,7 +128,8 @@ public class UserDao {
 			ResultSet r = query.executeQuery(sql);
 			while (r.next()) {
 				logintrouve = r.getInt("total");
-				if (logintrouve == 0) {
+				if (logintrouve == 0) 
+				{
 					connection.close();
 					break;
 				}
