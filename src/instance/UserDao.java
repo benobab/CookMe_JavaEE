@@ -149,8 +149,7 @@ public class UserDao {
 	public void setAdmin(UserModel user) {
 		String sql;
 		int isAdmin = 0;
-		sql = "update admin from user where ( login like '" + user.getLogin()
-				+ "')";
+		sql = "update user set admin=1 where ( login like '" + user.getLogin()+ "')";
 		try {
 			java.sql.Statement query = connection.createStatement();
 			ResultSet r = query.executeQuery(sql);
