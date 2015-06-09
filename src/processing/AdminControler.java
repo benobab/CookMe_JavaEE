@@ -9,7 +9,7 @@ import fabric.DaoFabric;
 import instance.UserDao;
 import model.UserModel;
 
-@ManagedBean(name = "adminControlerBean")
+@ManagedBean(name="adminControlerBean")
 @ApplicationScoped
 public class AdminControler {
 	//Actions relatives à l'interface d'administration
@@ -18,13 +18,15 @@ public class AdminControler {
 	{
 		DaoFabric daoFabric = DaoFabric.getInstance();
 		UserDao userDao = daoFabric.createUserDao();
-		if( userDao.isAdmin(user))
+		
+		if( userDao.testCo(user))
 		{
-			return ("selectAdmin.jsf");
-		}else
-		{
-			return ("login.jsf");
+			if(userDao.isAdmin(user))
+			{
+				return ("selectAdmin.jsf");
+			}
 		}
+		return ("login.jsf");
 	}
 	
 	public ArrayList<UserModel> getUsers(){

@@ -1,3 +1,6 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
 
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
@@ -9,7 +12,7 @@
 
 
 	<ui:define name="body">
-		<form id="formConnect" class="form-horizontal" rendered="true">
+		<h:form id="formConnect" class="form-horizontal">
 			<div class="form-group">
 				<h:panelGrid columns="3" cellpadding="5">
 					<h:outputText value="Username" />
@@ -25,12 +28,12 @@
 				</h:panelGrid>
 			</div>
 			<div class="form-group">
-				<h:commandButton id="btnOK" value="OK" class="btn btn-default"
-					action="#{adminControlerBean.isAdmin (userModelBean)}">
-				</h:commandButton>
+				<h:commandButton value="OK" class="btn btn-default"
+								action="#{adminControlerBean.isAdmin(userModelBean)}" />
 			</div>
-		</form>
+		</h:form>
 	</ui:define>
 
 </ui:composition>
+</html>
 

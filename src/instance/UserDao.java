@@ -123,18 +123,16 @@ public class UserDao {
 		int logintrouve = 1;
 		sql = "select count(*) AS total from user where ( login like '"
 				+ user.getLogin() + "' and pwd like '" + user.getPwd() + "')";
-		System.out.println(sql);
 		try {
 			java.sql.Statement query = connection.createStatement();
 			ResultSet r = query.executeQuery(sql);
 			while (r.next()) {
 				logintrouve = r.getInt("total");
 				if (logintrouve == 0) {
+					connection.close();
 					break;
 				}
 			}
-			connection.close();
-
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -143,7 +141,6 @@ public class UserDao {
 		} else {
 			return true;
 		}
-
 	}
 
 	public void setAdmin(UserModel user) {
@@ -182,12 +179,10 @@ public class UserDao {
 				}
 			}
 			connection.close();
-
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-
-		if (isAdmin == 1) {
+		if (isAdmin == 1){
 			return true;
 		} else {
 			return false;
