@@ -97,15 +97,16 @@
 	width:50%;
 }
 
-#inscriptionTitle{
+.h3Title{
 	margin-left: auto;
 	margin-right: auto;
-	width:100px;
+	width:400px;
 }
 
-#inscriptionButton{
-	margin-left: auto;
-	margin-right: auto;
-	width:100px;
-	
+#inscriptionButtonOk{
+	text-align: right;	
+}
+
+#inscriptionButtonCancel{
+	text-align: left;	
 }
