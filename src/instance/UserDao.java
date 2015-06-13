@@ -130,10 +130,10 @@ public class UserDao {
 				logintrouve = r.getInt("total");
 				if (logintrouve == 0) 
 				{
-					connection.close();
 					break;
 				}
 			}
+			connection.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

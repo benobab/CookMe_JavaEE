@@ -35,7 +35,7 @@ public class DataGridView implements Serializable {
 		return recipes;
 	}
 
-	public RecipeModel getSelectedCar() {
+	public RecipeModel getSelectedRecipe() {
 		return selectedRecipe;
 	}
 

@@ -19,19 +19,21 @@
 					<f:facet name="header">
 									Titre
 								</f:facet>
-								#{u.getTitre()}
-							</p:column>
+								<a href="review.xhtml?id=#{requestClass.requestID}"> <h:outputText
+							value="#{u.titre}" />
+								</a>
+				</p:column>
 				<p:column>
 					<f:facet name="header">
 									Resumé
 								</f:facet>
-								#{u.getResume()}
+								#{u.resume}
 							</p:column>
 				<p:column>
 					<f:facet name="header">
 									Preparation
 								</f:facet>
-								#{u.getPreparation()}
+								#{u.preparation}
 							</p:column>
 			</p:dataTable>
 			<form class="margin-base-vertical" action="recherche.jsf">
@@ -44,55 +46,7 @@
 
 
 
-			<h:form id="form">
-				<p:dataGrid var="recipe" value="#{dataGridViewBean.recipes}" columns="3"
-					layout="grid" rows="12" paginator="true" id="recipes"
-					paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
-					rowsPerPageTemplate="6,12,16">
 
-					<f:facet name="header">
-            Cars for Sale
-        </f:facet>
-					<p:panel header="#{recette.titre}" style="text-align:center">
-						<h:panelGrid columns="1" style="width:100%">
-
-							<h:outputText value="#{recipe.titre}" />
-
-							<p:commandLink update=":form:carDetail"
-								oncomplete="PF('carDialog').show()" title="View Detail">
-								<h:outputText styleClass="ui-icon ui-icon-search"
-									style="margin:0 auto;" />
-								<f:setPropertyActionListener value="#{recipe}"
-									target="#{dataGridViewBean.selectedRecipe}" />
-							</p:commandLink>
-						</h:panelGrid>
-					</p:panel>
-
-				</p:dataGrid>
-
-				<p:dialog header="Car Info" widgetVar="carDialog" modal="true"
-					showEffect="fade" hideEffect="fade" resizable="false">
-					<p:outputPanel id="carDetail" style="text-align:center;">
-						<p:panelGrid columns="2"
-							rendered="#{not empty dataGridViewBean.selectedRecipe}"
-							columnClasses="label,value">
-							<f:facet name="header">
-							</f:facet>
-
-							<h:outputText value="Titre :" />
-							<h:outputText value="#{dataGridViewBean.selectedRecipe.titre}" />
-
-							<h:outputText value="Resume :" />
-							<h:outputText value="#{dataGridViewBean.selectedRecipe.resume}" />
-
-							<h:outputText value="Difficulte :" />
-							<h:outputText value="#{dataGridViewBean.selectedRecipe.difficulte}" />
-
-
-						</p:panelGrid>
-					</p:outputPanel>
-				</p:dialog>
-			</h:form>
 		</ui:define>
 	</ui:composition>
 </h:body>
