@@ -45,25 +45,22 @@
 						<div class="form-group">
 							<h:commandButton id="btnOK" value="OK" class="btn btn-default"
 								action="#{userControlerBean.checkConnection(userModelBean)}">
-								
+
 							</h:commandButton>
 						</div>
 					</h:form>
 				</div>
 			</ui:fragment>
 			<ui:fragment rendered="#{userControlerBean.isConnected()}">
+
+				<h:outputText>Welcome !!!!
 			
-			<h:outputText value="userControlerBean.getUserConnected()"/>
-			
-			
+			</h:outputText>
+				<h:form>
+					<h:commandButton value="Logout" class="btn btn-default"
+						action="#{userControlerBean.logout()}" />
+				</h:form>
 			</ui:fragment>
-			<h:form id="formConnected" rendered="false">
-				<p>Welcome toi</p>
-				<p>12 personnes co</p>
-				<h:commandButton value="Logout" class="btn btn-default"
-					action="#{userModelBean.logout()}">
-				</h:commandButton>
-			</h:form>
 		</div>
 	</div>
 	<div id="body" class="row">
