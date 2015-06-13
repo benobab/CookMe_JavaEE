@@ -74,7 +74,7 @@ import instance.UserDao;
 	public String getUserConnected()
 	{
 		HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false);	
-		return "Bonjour"+ session.getAttribute("username");
+		return "Bonjour "+ session.getAttribute("username")+ "           ";
 	}
 	
 	public boolean addUser(UserModel user){

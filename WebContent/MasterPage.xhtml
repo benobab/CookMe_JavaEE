@@ -51,8 +51,9 @@
 				</div>
 			</ui:fragment>
 			<ui:fragment rendered="#{userControlerBean.isConnected()}">
-				<h:form class="margin-base-vertical pull-right">
+				<h:form class="inline-block pull-right">
 					<h:outputText>Welcome !!!!</h:outputText><br />
+					<p:outputLabel value="#{userControlerBean.getUserConnected()}  "/>
 					<h:commandButton value="Logout" class="btn btn-default"
 						action="#{userControlerBean.logout()}" />
 				</h:form>
