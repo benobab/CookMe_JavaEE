@@ -5,35 +5,40 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
-<h:head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<link rel="stylesheet" type="text/css" href="css/style.css" />
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
-	<title>Cook Me</title>
-</h:head>
-<h:body>
-<div class="container-fluid">
-			<div class="col-md-12"><p:button outcome="inscription.jsf" value="Inscription" /></div>
-				<br />
-				<br />
-				<br />
-				<div class="col-md-12">
-				<p:button outcome="recherche.jsf" value="Recipes" />
-				</div>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+<title>Cook Me</title>
+<style>
+html {
+	background: url(css/img.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+</style>
+</head>
+
+<body id="indexBody">
+	<div class="container">
+		<div id="activiteRow" class="row">
+			<div class="col-md-6">
+				<form class="margin-base-vertical" action="inscription.jsf">
+					<p class="text-center">
+						<button type="submit" class="btn btn-success btn-lg btn-activite">Inscription</button>
+					</p>
+				</form>
 			</div>
-
-</h:body>
-
-
-
-<div id="footer" class="row">
-			<div class="col-md-8">
-				<p>Copyright 2015 guiBra / tristandefournas / benobab [on
-					Github]
-				</p>
-			</div>
-			<div class="col-md-4">
-				<img id="logo" src="logo.png" />
+			<div class="col-md-6">
+				<form class="margin-base-vertical" action="recherche.jsf">
+					<p class="text-center">
+						<button type="submit" class="btn btn-success btn-lg btn-activite">Recipes</button>
+					</p>
+				</form>
 			</div>
 		</div>
+	</div>
+</body>
 </html>

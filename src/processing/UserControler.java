@@ -6,7 +6,7 @@ import java.util.Map;
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
- 
+import javax.faces.bean.SessionScoped;
 
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
@@ -18,6 +18,7 @@ import instance.UserDao;
  
 @ManagedBean(name = "userControlerBean")
 @ApplicationScoped
+@SessionScoped
  public class UserControler {
  	//actions relatives aux utilisateurs
 	
