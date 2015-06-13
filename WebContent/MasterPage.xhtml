@@ -17,54 +17,67 @@
 			<div id="title" class="col-md-6">
 				<ui:insert name="title">Accueil</ui:insert>
 			</div>
-			<div id="becomeMember" class="col-md-2)">
-				<form class="margin-base-vertical" action="inscription.jsf">
-					<p class="text-center">
-						<button type="submit" class="btn btn-success btn-lg">Become
-							a member</button>
-					</p>
-				</form>
-			</div>
-			<div id="register" class="col-md-4">
-				<form id="formConnect" class="form-horizontal" rendered="true">
-					<div class="form-group">
-						<h:panelGrid columns="3" cellpadding="5">
-	    					<h:outputText value="Username" />
-							<p:inputText  id="username" value="#{userModelBean.login}" title="Entrer ici votre login" />
-							<p:tooltip id="toolTipFocus" for="username" showEvent="focus" hideEvent="blur" />
-	    					<h:outputText value="Password" />
-							<p:inputText  id="password" value="#{userModelBean.pwd}" title="Entrer ici votre mot de passe" />
-							<p:tooltip id="toolTipFocus2" for="password" showEvent="focus" hideEvent="blur" />
-						</h:panelGrid>	
-					</div>
-					<div class="form-group">
-						<h:commandButton id="btnOK" value="OK" class="btn btn-default"
-							action="#{userControlerBean.checkConnection(userModelBean)}">
-							<f:ajax execute="@form" render="formConnected" />
-						</h:commandButton>
-					</div>
-				</form>
-				<h:form id="formConnected" rendered="false">
-					<p>Welcome toi</p>
-					<p>12 personnes co</p>
-					<h:commandButton value="Logout" class="btn btn-default"
-						action="#{userModelBean.logout()}">
-					</h:commandButton>
-				</h:form>
-			</div>
-		</div>
-		<div id="body" class="row">
-			<ui:insert name="body">
+			<ui:fragment rendered="#{userControlerBean.isNotConnected()}">
+				<div id="becomeMember" class="col-md-2)">
+					<form class="margin-base-vertical" action="inscription.jsf">
+						<p class="text-center">
+							<button type="submit" class="btn btn-success btn-lg">Become
+								a member</button>
+						</p>
+					</form>
+				</div>
+				<div id="register" class="col-md-4">
+					<h:form id="formConnect" class="form-horizontal" rendered="true">
+						<div class="form-group">
+							<h:panelGrid columns="3" cellpadding="5">
+								<h:outputText value="Username" />
+								<p:inputText id="username" value="#{userModelBean.login}"
+									title="Entrer ici votre login" />
+								<p:tooltip id="toolTipFocus" for="username" showEvent="focus"
+									hideEvent="blur" />
+								<h:outputText value="Password" />
+								<p:inputText id="password" value="#{userModelBean.pwd}"
+									title="Entrer ici votre mot de passe" />
+								<p:tooltip id="toolTipFocus2" for="password" showEvent="focus"
+									hideEvent="blur" />
+							</h:panelGrid>
+						</div>
+						<div class="form-group">
+							<h:commandButton id="btnOK" value="OK" class="btn btn-default"
+								action="#{userControlerBean.checkConnection(userModelBean)}">
+								
+							</h:commandButton>
+						</div>
+					</h:form>
+				</div>
+			</ui:fragment>
+			<ui:fragment rendered="#{userControlerBean.isConnected()}">
 			
-			</ui:insert>
+			<h:outputText value="userControlerBean.getUserConnected()"/>
+			
+			
+			</ui:fragment>
+			<h:form id="formConnected" rendered="false">
+				<p>Welcome toi</p>
+				<p>12 personnes co</p>
+				<h:commandButton value="Logout" class="btn btn-default"
+					action="#{userModelBean.logout()}">
+				</h:commandButton>
+			</h:form>
 		</div>
-		<div id="footer" class="row">
-			<div class="col-md-8">
-				<p>© Copyright 2015 guiBra / tristandefournas / benobab [on Github]</p>
-			</div>
-			<div class="col-md-4">
-				<img id="logo" src="logo.png" />
-			</div>
+	</div>
+	<div id="body" class="row">
+		<ui:insert name="body">
+
+		</ui:insert>
+	</div>
+	<div id="footer" class="row">
+		<div class="col-md-8">
+			<p>© Copyright 2015 guiBra / tristandefournas / benobab [on
+				Github]</p>
+		</div>
+		<div class="col-md-4">
+			<img id="logo" src="logo.png" />
 		</div>
 	</div>
 </h:body>
