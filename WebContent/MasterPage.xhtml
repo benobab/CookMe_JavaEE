@@ -14,9 +14,13 @@
 <h:body>
 	<div class="container-fluid">
 		<div id="header" class="row">
-			<div id="title" class="col-md-6">
-				<ui:insert name="title">Accueil</ui:insert>
-			</div>
+			<ui:insert name="title">
+				<div class="title col-md-1" style="background-color: yellow;">
+					<div id="bloc">
+						Accueil
+					</div>
+				</div>
+			</ui:insert>
 			<ui:fragment rendered="#{userControlerBean.isNotConnected()}">
 				<div id="becomeMember" class="col-md-2)">					
 					<h:form class="margin-base-vertical" >
@@ -66,12 +70,12 @@
 		</ui:insert>
 	</div>
 	<div id="footer" class="row">
-		<div class="col-md-8">
+		<div class="col-md-6" id="copyright">
 			<p>© Copyright 2015 guiBra / tristandefournas / benobab [on
 				Github]</p>
 		</div>
 		<div class="col-md-4">
-			<img id="logo" src="logo.png" />
+			<img id="logo" src="css/logo.jpg" />
 		</div>
 	</div>
 </h:body>

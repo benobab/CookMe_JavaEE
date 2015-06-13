@@ -2,15 +2,24 @@
 
 #logo {
 	float: right;
+	height:10%;
+	width:10%;
 }
 
 #register {
 	float: right;
 }
 
-#title {
-	width: 100px;
-	background-color: yellow;
+.title {
+	height: 100%;
+	width: 10%;
+	text-align: center;
+  	position:relative
+}
+
+#bloc{
+	position:absolute; 
+	top:40%;
 }
 
 #bouton {
@@ -22,11 +31,19 @@
 }
 
 #header {
-	background-color: RED;
+	background-image: url(header.jpg);
+	background-size: 30% 100%;
+	height:150px;
 }
 
 #footer {
-	background-color: GREEN;
+	background-color: white;
+	height:100px;
+}
+
+#copyright{
+	font:bold;
+	margin-left:20px;
 }
 
 #formRegister {
@@ -74,7 +91,21 @@
 	padding-top: 15%;
 }
 
-#inscrition{
-	margin-left: 100px;
+.form-horizontal{
+	margin-left: auto;
 	margin-right: auto;
+	width:50%;
+}
+
+#inscriptionTitle{
+	margin-left: auto;
+	margin-right: auto;
+	width:100px;
+}
+
+#inscriptionButton{
+	margin-left: auto;
+	margin-right: auto;
+	width:100px;
+	
 }

@@ -1,25 +1,40 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
-		xmlns:ui="http://java.sun.com/jsf/facelets"
-		xmlns:h="http://java.sun.com/jsf/html"
-		xmlns:f="http://java.sun.com/jsf/core"
-		xmlns:p="http://primefaces.org/ui"
-		template="/masterPageAdmin.xhtml">
-		
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui" template="/masterPageAdmin.xhtml">
 
-				
-		<ui:define name="body">
-		<div class="container-fluid">
-				<div class="col-md-12">
-					<p:button outcome="adminUsers.jsf" value="adminUsers" />
-				</div>
-					<br />
-					<br />
-					<br />
-				<div class="col-md-12">
-					<p:button outcome="adminReceipes.jsf" value="adminRecipes" />
-				</div>
+
+	<ui:define name="title">
+		<div class="title col-md-1" style="background-color: white;">
+			<div id="bloc">Administration</div>
 		</div>
-		</ui:define>
-	
+	</ui:define>
+
+	<ui:define name="body">
+		<body id="indexBody">
+			<div class="container">
+				<div id="activiteRow" class="row">
+					<div class="col-md-6">
+						<form class="margin-base-vertical" action="adminUsers.jsf">
+							<p class="text-center">
+								<button type="submit"
+									class="btn btn-success btn-lg btn-activite">adminUsers</button>
+							</p>
+						</form>
+					</div>
+					<div class="col-md-6">
+						<form class="margin-base-vertical" action="adminReceipes.jsf">
+							<p class="text-center">
+								<button type="submit"
+									class="btn btn-success btn-lg btn-activite">adminRecipes</button>
+							</p>
+						</form>
+					</div>
+				</div>
+			</div>
+		</body>
+	</ui:define>
+
 </ui:composition>
 

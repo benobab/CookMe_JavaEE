@@ -8,16 +8,20 @@
 <h:body>
 	<ui:composition template="./MasterPage.xhtml">
 		<ui:define name="title">
-			<p>Inscription</p>
+				<div class="title col-md-1" style="background-color: blue;">
+					<div id="bloc">
+						Inscription
+					</div>
+				</div>
 		</ui:define>
 		<ui:define name="body">
 			<div class="bs-example">
-				<h3>Inscription</h3>
+				<h3 id="inscriptionTitle">Inscription</h3>
 				<h:form id="formRegister" class="form-horizontal" rendered="true">
-					<div id="inscription col-md-6">
+					<div id="inscription">
 						<div class="form-group">
 							<h:outputText class="col-sm-2 control-label"
-								value="Your Fisrtname"></h:outputText>
+								value="Prénom"></h:outputText>
 							<div class="col-sm-4">
 								<h:inputText id="firstname" class="form-control"
 									value="#{userModelBean.firstname}" required="true">
@@ -28,7 +32,7 @@
 						</div>
 						<div class="form-group">
 							<h:outputText class="col-sm-2 control-label"
-								value="Your Lastname"></h:outputText>
+								value="Nom de famille"></h:outputText>
 							<div class="col-sm-4">
 								<h:inputText id="lastname" class="form-control"
 									value="#{userModelBean.lastname}" required="true">
@@ -39,7 +43,7 @@
 
 						</div>
 						<div class="form-group">
-							<h:outputText class="col-sm-2 control-label" value="Your Age"></h:outputText>
+							<h:outputText class="col-sm-2 control-label" value="Age"></h:outputText>
 							<div class="col-sm-4">
 								<h:inputText id="age" class="form-control"
 									value="#{userModelBean.age}" required="true">
@@ -49,7 +53,7 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<h:outputText class="col-sm-2 control-label" value="Your Mail"></h:outputText>
+							<h:outputText class="col-sm-2 control-label" value="Mail"></h:outputText>
 							<div class="col-sm-4">
 								<h:inputText id="email" class="form-control"
 									value="#{userModelBean.email}" required="true">
@@ -59,7 +63,7 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<h:outputText class="col-sm-2 control-label" value="Your Login"></h:outputText>
+							<h:outputText class="col-sm-2 control-label" value="Login"></h:outputText>
 							<div class="col-sm-4">
 								<h:inputText id="login" class="form-control"
 									value="#{userModelBean.login}" required="true">
@@ -69,7 +73,7 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<h:outputText class="col-sm-2 control-label" value="Your Pwd"></h:outputText>
+							<h:outputText class="col-sm-2 control-label" value="Mot de passe"></h:outputText>
 							<div class="col-sm-4">
 								<h:inputText id="pwd" class="form-control"
 									value="#{userModelBean.pwd}" required="true" binding="#{pass}">
@@ -79,7 +83,7 @@
 						</div>
 						<div class="form-group">
 							<h:outputText class="col-sm-2 control-label"
-								value="Re enter Your Pwd"></h:outputText>
+								value="Confirmation"></h:outputText>
 							<div class="col-sm-4">
 								<h:inputText id="repwd" class="form-control" value="#{repwd}"
 									required="true">
@@ -89,8 +93,8 @@
 								<h:message for="repwd"></h:message>
 							</div>
 						</div>
-						<div class="form-group">
-							<h:commandButton value="OK" class="btn btn-default"
+						<div class="form-group text-center">
+							<h:commandButton value="OK" class="btn btn-default" id="inscriptionButton"
 								action="#{userControlerBean.addUser(userModelBean)}" />
 						</div>
 					</div>
