@@ -23,6 +23,9 @@ public EmailValidator() {
 public void validate (FacesContext context, UIComponent component, Object value) throws ValidatorException {
 	matcher = pattern.matcher(value.toString()); 
 	if(!matcher.matches()){
+		FacesContext.getCurrentInstance().addMessage( null,new FacesMessage(FacesMessage.SEVERITY_WARN,
+                        "Incorrect email adress",
+                        "Please enter correct email adress"));
 		FacesMessage msg = new FacesMessage("Ce n'est pas une @ mail","Il faut suivre le pattern suivant, mail correct : "+MAIL_PATTERN); 
 		msg.setSeverity(FacesMessage.SEVERITY_ERROR); 
 		throw new ValidatorException(msg); 
