@@ -20,7 +20,7 @@ Questions réalisées (rassemblées par package):
 		+ ajout  
 		+ récupération des attributs pour la recherche (récupérer tous les types de recettes par exemple)
 	+ DAOFabric
-		+ singleton, création des DaoUser et DaoRecipe
+		+ singleton, création des DAOUser et DAORecipe
 - Models :
 	+ recipe (bean sérialisable)
 	+ user (bean sérialisable)
@@ -29,16 +29,16 @@ Questions réalisées (rassemblées par package):
 		+ gestion de connexion admin
 		+ affichage de la dernière connexion 
 	+ user
-		+ gestion de la connexion / deconnexion (via les sessions + DAO)
+		+ gestion de la connexion / déconnexion (via les sessions + DAO)
 		+ appels des différentes fonctions de la DAOuser pour les relations BDD
 		+ inscription possibles
 	+ recipe
-		+ appels des différentes fonctions de la DAOrecipe pour les relations BDD
+		+ appels des différentes fonctions de la DAORecipe pour les relations BDD
 - Validators :
 	+ un validator pour chaque champs d'inscription
 -vues :
 	+ Datatable de résultats de recherche de recette
-		+ Tableau de toutes les recettes correspondants à la recherche
+		+ Tableau de toutes les recettes correspondant à la recherche
 	+ Affichage de recette (manque l'interface de commentaires)
 		+ Titre / préparation / nombre de personnes etc
 	+ template MasterPage.xhtml :
@@ -56,10 +56,10 @@ Questions réalisées (rassemblées par package):
 Questions manquantes : 
 
 -> validation ajax lors de la connexion
--> affichage des recettes trouvées dans une datagrid et non une datatable (datagrid initialisée, mais ensuite manque de temps, mais elle est présente dans le code livré)
+-> affichage des recettes trouvées dans une datagrid et non une datatable (datagrid initialisée, mais ensuite manque de temps, elle est présente dans le code livré)
 -> gestion des commentaires 
 -> administration des utilisateurs / recettes (fonctions présentes pour la plupart dans la DAO et controler mais pas intégrée dans la vue par manque de temps)
---> Image lors de l'affichage de la recette (implémenté en base de données, il reste juste à rajouter la restitution dans la vue, très simple car l'attribut img de la recette est une string.. donc balise image avec pour source src="#{recipeControlerBean.getCurrentRecipe().img}" et à ajouter des images dans le projet)
+--> Image lors de l'affichage de la recette (implémenté en base de données, il reste juste à rajouter la restitution dans la vue, très simple car l'attribut img de la recette est une string donc balise image avec pour source src="#{recipeControlerBean.getCurrentRecipe().img}" et à ajouter des images dans le projet)
 
 
 Commentaires : 
