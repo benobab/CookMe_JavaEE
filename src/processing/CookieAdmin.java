@@ -1,6 +1,5 @@
 package processing;
 
-
 import java.util.Date;
 
 import javax.faces.context.FacesContext;
@@ -10,54 +9,58 @@ import javax.servlet.http.HttpServletResponse;
 
 public class CookieAdmin {
 
-	  public void setCookie(String name, String value, int expiry) {
-		  
-	    FacesContext facesContext = FacesContext.getCurrentInstance();
 
-	    HttpServletRequest request = (HttpServletRequest) facesContext.getExternalContext().getRequest();
-	    Cookie cookie = null;
 
-	    Cookie[] userCookies = request.getCookies();
-	    if (userCookies != null && userCookies.length > 0 ) {
-	        for (int i = 0; i < userCookies.length; i++) {
-	            if (userCookies[i].getName().equals(name)) {
-	                cookie = userCookies[i];
-	                break;
-	            }
-	        }
-	    }
+	public void setCookie(String name, String value, int expiry) {
 
-	    if (cookie != null) {
-	        cookie.setValue(value);
-	    } else {
-	        cookie = new Cookie(name, value);
-	        cookie.setPath(request.getContextPath());
-	    }
+		FacesContext facesContext = FacesContext.getCurrentInstance();
 
-	    cookie.setMaxAge(expiry);
+		HttpServletRequest request = (HttpServletRequest) facesContext
+				.getExternalContext().getRequest();
+		Cookie cookie = null;
 
-	    HttpServletResponse response = (HttpServletResponse) facesContext.getExternalContext().getResponse();
-	    response.addCookie(cookie);
-	  }
+		Cookie[] userCookies = request.getCookies();
+		if (userCookies != null && userCookies.length > 0) {
+			for (int i = 0; i < userCookies.length; i++) {
+				if (userCookies[i].getName().equals(name)) {
+					cookie = userCookies[i];
+					break;
+				}
+			}
+		}
 
-	  public Cookie getCookie(String name) {
+		if (cookie != null) {
+			cookie.setValue(value);
+		} else {
+			cookie = new Cookie(name, value);
+			cookie.setPath(request.getContextPath());
+		}
 
-	    FacesContext facesContext = FacesContext.getCurrentInstance();
+		cookie.setMaxAge(expiry);
 
-	    HttpServletRequest request = (HttpServletRequest) facesContext.getExternalContext().getRequest();
-	    Cookie cookie = null;
-
-	    Cookie[] userCookies = request.getCookies();
-	    if (userCookies != null && userCookies.length > 0 ) {
-	        for (int i = 0; i < userCookies.length; i++) {
-	            if (userCookies[i].getName().equals(name)) {
-	                cookie = userCookies[i];
-	                return cookie;
-	            }
-	        }
-	    }
-	    return null;
-	  }
-
-	
+		HttpServletResponse response = (HttpServletResponse) facesContext
+				.getExternalContext().getResponse();
+		response.addCookie(cookie);
 	}
+
+	public Cookie getCookie(String name) {
+
+		FacesContext facesContext = FacesContext.getCurrentInstance();
+
+		HttpServletRequest request = (HttpServletRequest) facesContext
+				.getExternalContext().getRequest();
+		Cookie cookie = null;
+
+		Cookie[] userCookies = request.getCookies();
+		if (userCookies != null && userCookies.length > 0) {
+			for (int i = 0; i < userCookies.length; i++) {
+				if (userCookies[i].getName().equals(name)) {
+					cookie = userCookies[i];
+					return cookie;
+				}
+			}
+		}
+		return null;
+	}
+
+}

@@ -18,7 +18,7 @@ import fabric.DaoFabric;
 @ApplicationScoped
 public class RecipeControler {
 	//actions relatives aux recettes
-	
+	private RecipeModel currentRecipe;
 	public ArrayList<RecipeModel> getRecipes()
 	{
 		DaoFabric daofabric = DaoFabric.getInstance();
