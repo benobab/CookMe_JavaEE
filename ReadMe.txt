@@ -51,9 +51,20 @@ Questions réalisées (rassemblées par package):
 	+ création
 	+ remplissage en données (recettes / utilisateur)
 
+
+
 Questions manquantes : 
+
 -> validation ajax lors de la connexion
 -> affichage des recettes trouvées dans une datagrid et non une datatable (datagrid initialisée, mais ensuite manque de temps, mais elle est présente dans le code livré)
 -> gestion des commentaires 
 -> administration des utilisateurs / recettes (fonctions présentes pour la plupart dans la DAO et controler mais pas intégrée dans la vue par manque de temps)
 --> Image lors de l'affichage de la recette (implémenté en base de données, il reste juste à rajouter la restitution dans la vue, très simple car l'attribut img de la recette est une string.. donc balise image avec pour source src="#{recipeControlerBean.getCurrentRecipe().img}" et à ajouter des images dans le projet)
+
+
+Commentaires : 
+1_Un petit manque de temps sur la fin  (voir la section ci dessus "Questions manquantes"). 
+
+2_Le Java EE est un petit peu difficile à prendre en main aux premiers abords, mais 75 % du code a été réalisé dans les 20 derniers % de temps de réalisation, il est donc à noter une forte progression du groupe sur cette technologie.
+
+3_Une grosse difficulté a été de debuger sous eclipse (IDE jamais utilisé pour 2 personnes sur 3 du projet).
