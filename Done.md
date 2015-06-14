@@ -11,6 +11,7 @@
 
 + activite.xhtml
 + selectAdmin.xhtml
++ Création cookie pour lastConnection avec séparation des fonctions dans cookieAdmin et utilisation dans l'interface d'administration
 
 ##Ben
 + Création squelette du programme
@@ -43,3 +44,4 @@
 + Base de données
 	+ création
 	+ remplissage en données (recettes / utilisateur)
++ Fix bug sur les cookies.
