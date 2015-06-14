@@ -9,11 +9,9 @@
 <h:body>
 	<ui:composition template="./MasterPage.xhtml">
 		<ui:define name="title">
-				<div class="title col-md-1" style="background-color: purple;">
-					<div id="bloc">
-						Résultat
-					</div>
-				</div>
+			<div class="title col-md-1" style="background-color: purple;">
+				<div id="bloc">Résultat</div>
+			</div>
 		</ui:define>
 
 		<ui:define name="body">
@@ -23,9 +21,14 @@
 					<f:facet name="header">
 									Titre
 								</f:facet>
-								<a href="review.xhtml?id=#{requestClass.requestID}"> <h:outputText
-							value="#{u.titre}" />
-								</a>
+					
+					<h:outputLink value="affichage.jsf">
+						<f:param name="titre" value="#{u.titre}" />
+						<f:param name="prep" value="#{u.preparation}" />
+						<f:param name="proce" value="#{u.procedure}" />
+						<f:param name="personnes" value="#{u.personnes}" />
+    #{u.titre}
+</h:outputLink>
 				</p:column>
 				<p:column>
 					<f:facet name="header">
@@ -33,12 +36,7 @@
 								</f:facet>
 								#{u.resume}
 							</p:column>
-				<p:column>
-					<f:facet name="header">
-									Preparation
-								</f:facet>
-								#{u.preparation}
-							</p:column>
+			
 			</p:dataTable>
 			<form class="margin-base-vertical" action="recherche.jsf">
 				<p class="text-center">

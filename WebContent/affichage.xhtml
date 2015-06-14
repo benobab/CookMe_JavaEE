@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:body>
+	<ui:composition template="./MasterPage.xhtml">
+		<ui:define name="title">
+				<div class="title col-md-1" style="background-color: purple;">
+					<div id="bloc">
+						Affichage de la recette
+					</div>
+				</div>
+		</ui:define>
+
+		<ui:define name="body">
+			
+			<h1 style="text-align:center;">
+				<h:outputText value="#{param['titre']}"/>
+			</h1>
+			<p style="text-align:center;">
+				<h:outputText value="Pour #{param['personnes']} personnes."/>
+			</p>
+			<h3 style="text-align:center;">Préparation : </h3>
+			<p style="text-align:center;">
+				<h:outputText value="Temps : #{param['preparation']} minutes."/>
+			</p>
+			<h3 style="text-align:center;">Procédure : </h3>
+			<p style="text-align:center;">
+			
+				<h:outputText value="#{param['proce']}"/>
+			</p>
+			
+			<h:form class="margin-base-vertical" >
+				<p class="text-center">
+					<h:commandButton action="recherche.jsf" class="btn btn-success btn-lg" value="Retour
+						aux recherches" />
+				</p>
+
+			</h:form>
+			<h:form class="margin-base-vertical" >
+				<p class="text-center">
+					<h:commandButton action="resultats.jsf" class="btn btn-success btn-lg" value="Retour
+						aux résultats" />
+				</p>
+
+			</h:form>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>
