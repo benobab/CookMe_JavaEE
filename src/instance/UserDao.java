@@ -168,8 +168,8 @@ public class UserDao {
 	public boolean isAdmin(UserModel user) {
 		String sql;
 		int isAdmin = 0;
-		sql = "select admin from user where ( login like '" + user.getLogin()
-				+ "')";
+		sql = "select admin from user where ( login like '"
+				+ user.getLogin() + "' and pwd like '" + user.getPwd() + "')";
 		try {
 			java.sql.Statement query = connection.createStatement();
 			ResultSet r = query.executeQuery(sql);
