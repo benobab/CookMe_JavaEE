@@ -16,16 +16,15 @@
 		<div id="header" class="row">
 			<ui:insert name="title">
 				<div class="title col-md-1" style="background-color: yellow;">
-					<div id="bloc">
-						Accueil
-					</div>
+					<div id="bloc">Accueil</div>
 				</div>
 			</ui:insert>
 			<ui:fragment rendered="#{userControlerBean.isNotConnected()}">
-				<div id="becomeMember" class="col-md-2)">					
-					<h:form class="margin-base-vertical" >
+				<div id="becomeMember" class="col-md-2)">
+					<h:form class="margin-base-vertical">
 						<p class="text-center">
-							<h:commandButton type="submit" class="btn btn-success btn-lg" action="inscription.jsf" value="Become a member"/>
+							<h:commandButton type="submit" class="btn btn-success btn-lg"
+								action="inscription.jsf" value="Become a member" />
 						</p>
 					</h:form>
 				</div>
@@ -56,8 +55,9 @@
 			</ui:fragment>
 			<ui:fragment rendered="#{userControlerBean.isConnected()}">
 				<h:form class="inline-block pull-right">
-					<h:outputText>Welcome !!!!</h:outputText><br />
-					<p:outputLabel value="#{userControlerBean.getUserConnected()}  "/>
+					<h:outputText>Welcome !!!!</h:outputText>
+					<br />
+					<p:outputLabel style="color:white;text-shadow: 2px 2px 4px #000000;" value="#{userControlerBean.getUserConnected()}  " />
 					<h:commandButton value="Logout" class="btn btn-default"
 						action="#{userControlerBean.logout()}" />
 				</h:form>
