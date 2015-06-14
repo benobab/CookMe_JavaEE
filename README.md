@@ -1,11 +1,11 @@
 # CookMe_JavaEE
 Projet de site web - Java EE
 
-Concepts mis en oeuvre : 
-+servlet
+Concepts mis en oeuvre :
++ servlet
 + jsp
 + java bean
-+ jsf 
++ jsf
 + jdbc
 
 L'architecture respectera les principes MVC.
