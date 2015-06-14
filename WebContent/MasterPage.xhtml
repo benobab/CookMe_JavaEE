@@ -29,15 +29,15 @@
 					</h:form>
 				</div>
 				<div id="register" class="col-md-4">
-					<h:form id="formConnect" class="form-horizontal" rendered="true">
+					<h:form id="formConnect" class="form-horizontal " rendered="true">
 						<div class="form-group">
 							<h:panelGrid columns="3" cellpadding="5">
-								<h:outputText value="Username" />
+								<h:outputText style="color:black;text-shadow: 2px 2px 4px #888888;" value="Username" />
 								<p:inputText id="username" value="#{userModelBean.login}"
 									title="Entrer ici votre login" />
 								<p:tooltip id="toolTipFocus" for="username" showEvent="focus"
 									hideEvent="blur" />
-								<h:outputText value="Password" />
+								<h:outputText style="color:black;text-shadow: 2px 2px 4px #888888;" value="Password" />
 								<p:inputText id="password" value="#{userModelBean.pwd}"
 									title="Entrer ici votre mot de passe" />
 								<p:tooltip id="toolTipFocus2" for="password" showEvent="focus"
@@ -54,7 +54,7 @@
 				</div>
 			</ui:fragment>
 			<ui:fragment rendered="#{userControlerBean.isConnected()}">
-				<h:form class="inline-block pull-right">
+				<h:form  class="inline-block pull-right">
 					<h:outputText>Welcome !!!!</h:outputText>
 					<br />
 					<p:outputLabel style="color:white;text-shadow: 2px 2px 4px #000000;" value="#{userControlerBean.getUserConnected()}  " />
@@ -74,8 +74,10 @@
 			<p>© Copyright 2015 guiBra / tristandefournas / benobab [on
 				Github]</p>
 		</div>
-		<div class="col-md-4">
-			<img id="logo" src="css/logo.jpg" />
+		<div class="col-md-4"><a href="index.html">
+		<img id="logo" src="css/logo.jpg" />
+		</a>
+			
 		</div>
 	</div>
 </h:body>
